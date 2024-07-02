@@ -1,3 +1,5 @@
+/*Establishes cpnnection to database */
+
 package com.app.CED;
 
 import com.app.model.QueryConstant;
