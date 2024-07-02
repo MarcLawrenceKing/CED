@@ -1,14 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The Student class is a Model responsible for the data logic and storing and retrieving data.
+ * 
+ * This class is being used in its own controller to allow manipulation of data.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.model;
 
-/**
- *
- * @author marcl
- */
 public class Student {
 
     private int StudentID;
@@ -26,7 +26,8 @@ public class Student {
 
     }
 
-    public Student(int StudentID, String StudentName, String AYTerm, String Scholarship, String ProgramCode, String ContactNumber, String Address, String YearLevel, String Section, String Campus) {
+    public Student(int StudentID, String StudentName, String AYTerm, String Scholarship, String ProgramCode,
+            String ContactNumber, String Address, String YearLevel, String Section, String Campus) {
         this.StudentID = StudentID;
         this.StudentName = StudentName;
         this.AYTerm = AYTerm;

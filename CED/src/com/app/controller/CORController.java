@@ -1,16 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The CORController class holds CORGenerator functionalities.
+ * 
+ * This class interconnects with the database thru SQL Queries defined in the QueryConstant class
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.controller;
 
 import com.app.CED.DBConnection;
 
-/**
- *
- * @author marcl
- */
 public class CORController extends DBConnection {
 
     public void generateCOR(int studentID) {
@@ -18,7 +18,7 @@ public class CORController extends DBConnection {
         try {
             connect();
 
-            // Fetch Student Details           
+            // Fetch Student Details
             prep = con.prepareStatement(STUDENT_DETAILS);
             prep.setInt(1, studentID);
             result = prep.executeQuery();
@@ -49,7 +49,7 @@ public class CORController extends DBConnection {
                 System.out.println("ContactNumber: " + contactNumber);
                 System.out.println();
 
-                // Fetch Subject Details                
+                // Fetch Subject Details
                 prep = con.prepareStatement(SUBJECT_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
@@ -70,19 +70,19 @@ public class CORController extends DBConnection {
 
                 System.out.println();
 
-                // Reset the totals to zero               
+                // Reset the totals to zero
                 prep = con.prepareStatement(RESET_TOTALS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 prep.executeUpdate();
 
-                // Fetch Fees Details                
+                // Fetch Fees Details
                 prep = con.prepareStatement(FEES_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
 
-                float totalFees = 0;
+                float totalFees = 0; // Accumulates all Amount associated with the StudentID and AYTerm
                 System.out.printf("%-15s | %10s%n", "FeeName", "Amount");
                 while (result.next()) {
                     System.out.printf("%-15s | %10.2f%n",
@@ -93,7 +93,7 @@ public class CORController extends DBConnection {
 
                 System.out.println();
 
-                // Fetch Tuition Details               
+                // Fetch Tuition Details
                 prep = con.prepareStatement(TUITION_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
@@ -103,7 +103,7 @@ public class CORController extends DBConnection {
                 float totalTuitionUnits = 0;
                 float totalCreditedUnits = 0;
                 float tuitionAmount = 0;
-                float totalAssessmentInFloat = 0; //to solve for total assessment
+                float totalAssessmentInFloat = 0; // to solve for total assessment
                 String totalAssessment = "";
 
                 if (result.next()) {
@@ -115,19 +115,20 @@ public class CORController extends DBConnection {
                         totalAssessment = "FREE"; // free if full scholar
                     }
                     if (scholarship.equals("PARTIAL")) {
-                        totalAssessmentInFloat = (totalFees + tuitionAmount)/ 2; // total is divided by 2
+                        totalAssessmentInFloat = (totalFees + tuitionAmount) / 2; // total is divided by 2
                         totalAssessment = Float.toString(totalAssessmentInFloat);
                     }
                     if (scholarship.equals("NON-SCHOLAR")) {
-                        totalAssessmentInFloat = totalFees + tuitionAmount; //calculate total assessment
+                        totalAssessmentInFloat = totalFees + tuitionAmount; // calculate total assessment
                         totalAssessment = Float.toString(totalAssessmentInFloat);
                     }
                 }
 
-                System.out.printf("MaxUnitsEnrolled: %-12.1f | TotalTuitionUnits: %-12.1f | TotalCreditedUnits: %-12.1f | TotalAssessment: %-20s%n",
+                System.out.printf(
+                        "MaxUnitsEnrolled: %-12.1f | TotalTuitionUnits: %-12.1f | TotalCreditedUnits: %-12.1f | TotalAssessment: %-20s%n",
                         maxUnitsEnrolled, totalTuitionUnits, totalCreditedUnits, totalAssessment);
 
-                // Update the database with the calculated totals               
+                // Update the database with the calculated totals
                 prep = con.prepareStatement(UPDATE_TOTALS);
                 prep.setFloat(1, totalTuitionUnits);
                 prep.setFloat(2, totalCreditedUnits);

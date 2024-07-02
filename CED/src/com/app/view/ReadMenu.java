@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The ReadMenu class contains the GUI to present all read options.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.view;
 
@@ -29,10 +31,6 @@ import com.app.model.Tuition;
 import com.app.model.TuitionFees;
 import java.util.ArrayList;
 
-/**
- *
- * @author marcl
- */
 public class ReadMenu {
 
     CRUDMenu cm = new CRUDMenu();
@@ -141,7 +139,8 @@ public class ReadMenu {
             ArrayList<Schedule> scheduleList = sc.readSchedule();
 
             // Display table headers
-            System.out.println("\nScheduleID      SubjectCode        SectionCode         Schedule                     AYTerm");
+            System.out.println(
+                    "\nScheduleID      SubjectCode        SectionCode         Schedule                     AYTerm");
             System.out.println("===========================================================");
 
             // Display program information
@@ -252,8 +251,10 @@ public class ReadMenu {
 
             // Display table headers
             System.out.println("\n");
-            System.out.println("Subject Code     Subject Title                                           Tuition Units  Credited Units");
-            System.out.println("========================================================================================================");
+            System.out.println(
+                    "Subject Code     Subject Title                                           Tuition Units  Credited Units");
+            System.out.println(
+                    "========================================================================================================");
 
             // Display subject information
             for (Subject subject : subjectList) {
@@ -262,7 +263,8 @@ public class ReadMenu {
                         subject.getSubjectTitle(),
                         subject.getTuitionUnits(),
                         subject.getCreditedUnits());
-                System.out.println("------------------------------------------------------------------------------------------------");
+                System.out.println(
+                        "------------------------------------------------------------------------------------------------");
             }
         } catch (Exception e) {
             // Handle exceptions gracefully
@@ -281,8 +283,10 @@ public class ReadMenu {
 
             // Display table headers
             System.out.println("\n");
-            System.out.println("TuitionID     StudentID         AYTerm               TotalTuitionUnits  TotalCreditedUnits  TuitionAmount  TotalAssessment");
-            System.out.println("=============================================================================================================");
+            System.out.println(
+                    "TuitionID     StudentID         AYTerm               TotalTuitionUnits  TotalCreditedUnits  TuitionAmount  TotalAssessment");
+            System.out.println(
+                    "=============================================================================================================");
 
             // Display tuition information
             for (Tuition tuition : tuitionList) {
@@ -294,7 +298,8 @@ public class ReadMenu {
                         tuition.getTotalCreditedUnits(),
                         tuition.getTuitionAmount(),
                         tuition.getTotalAssessment());
-                System.out.println("----------------------------------------------------------------------------------------------");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------------");
             }
         } catch (Exception e) {
             // Handle exceptions gracefully

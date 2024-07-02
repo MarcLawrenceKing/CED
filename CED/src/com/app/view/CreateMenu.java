@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The CreateMenu class contains the GUI to present all create options.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.view;
 
@@ -17,10 +19,6 @@ import com.app.model.Section;
 import com.app.model.Student;
 import java.util.Scanner;
 
-/**
- *
- * @author marcl
- */
 public class CreateMenu {
 
     public void createAYTerm() {

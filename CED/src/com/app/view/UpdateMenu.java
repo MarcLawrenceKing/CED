@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The UpdateMenu class contains the GUI to present all update options.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.view;
 
@@ -11,10 +13,6 @@ import com.app.model.Schedule;
 import com.app.model.Student;
 import java.util.Scanner;
 
-/**
- *
- * @author marcl
- */
 public class UpdateMenu {
 
     CRUDMenu cm = new CRUDMenu();
@@ -24,32 +22,32 @@ public class UpdateMenu {
         Schedule schedule = new Schedule();
         Scanner sc = new Scanner(System.in);
         ScheduleController scc = new ScheduleController();
-        
+
         System.out.print("Enter Schedule ID you want to update: ");
         schedule.setScheduleID(sc.nextInt());
         sc.nextLine();
         System.out.print("Enter new schedule: ");
         schedule.setSchedule(sc.nextLine());
-        
+
         System.out.print("Update Schedule record? [Y/N]: ");
-            char choice = sc.next().toLowerCase().charAt(0);
+        char choice = sc.next().toLowerCase().charAt(0);
 
-            if (choice == 'y') {
-                scc.updateSchedule(schedule);
-            } else {
-                System.out.println("Schedule was not updated.");
-            }
+        if (choice == 'y') {
+            scc.updateSchedule(schedule);
+        } else {
+            System.out.println("Schedule was not updated.");
+        }
 
-            System.out.print("\nDo you want to update more Schedule records? [Y/N]: ");
-            char add_more = sc.next().toLowerCase().charAt(0);
+        System.out.print("\nDo you want to update more Schedule records? [Y/N]: ");
+        char add_more = sc.next().toLowerCase().charAt(0);
 
-            if (add_more == 'y') {
-                updateSchedule();
-            } else {
-                System.out.println("\n**Updated Schedule records**");
-                rm.readSchedule();
-                cm.updateMenu();
-            }
+        if (add_more == 'y') {
+            updateSchedule();
+        } else {
+            System.out.println("\n**Updated Schedule records**");
+            rm.readSchedule();
+            cm.updateMenu();
+        }
     }
 
     public void updateStudent() {
@@ -57,7 +55,7 @@ public class UpdateMenu {
         Student student = new Student();
         Scanner sc = new Scanner(System.in);
         StudentController stc = new StudentController();
-        
+
         System.out.print("Enter Student ID you want to update: ");
         student.setStudentID(sc.nextInt());
         sc.nextLine();
@@ -79,26 +77,26 @@ public class UpdateMenu {
         student.setSection(sc.nextLine());
         System.out.print("Enter new Campus: ");
         student.setCampus(sc.nextLine());
-                
+
         System.out.print("Update Student record? [Y/N]: ");
-            char choice = sc.next().toLowerCase().charAt(0);
+        char choice = sc.next().toLowerCase().charAt(0);
 
-            if (choice == 'y') {
-                stc.updateStudent(student);
-            } else {
-                System.out.println("Student was not updated.");
-            }
+        if (choice == 'y') {
+            stc.updateStudent(student);
+        } else {
+            System.out.println("Student was not updated.");
+        }
 
-            System.out.print("\nDo you want to update more Student records? [Y/N]: ");
-            char add_more = sc.next().toLowerCase().charAt(0);
+        System.out.print("\nDo you want to update more Student records? [Y/N]: ");
+        char add_more = sc.next().toLowerCase().charAt(0);
 
-            if (add_more == 'y') {
-                updateStudent();
-            } else {
-                System.out.println("\n**Updated Student records**");
-                rm.readStudent();
-                cm.updateMenu();
-            }
+        if (add_more == 'y') {
+            updateStudent();
+        } else {
+            System.out.println("\n**Updated Student records**");
+            rm.readStudent();
+            cm.updateMenu();
+        }
     }
 
 }

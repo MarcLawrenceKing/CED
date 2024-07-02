@@ -1,5 +1,14 @@
-/*Establishes cpnnection to database */
-
+/*
+ * The DBConnection class establishes a database connection using JDBC.
+ * it uses JDBC to interact with the MySQL database and provides a centralized 
+ * location for managing database connections and operations throughout the system
+ * 
+ * This class is being implemented by ALL controllers  
+ *
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
+ */
 package com.app.CED;
 
 import com.app.model.QueryConstant;

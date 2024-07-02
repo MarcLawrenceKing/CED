@@ -1,7 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The TuitionFeesController class holds TuitionFees functionalities.
+ * 
+ * This class interconnects with the database thru SQL Queries defined in the QueryConstant class
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.controller;
 
@@ -9,11 +13,7 @@ import com.app.CED.DBConnection;
 import com.app.model.TuitionFees;
 import java.util.ArrayList;
 
-/**
- *
- * @author marcl
- */
-public class TuitionFeesController extends DBConnection { // dito natapos
+public class TuitionFeesController extends DBConnection {
     public ArrayList<TuitionFees> readtuitionFee() {
         ArrayList<TuitionFees> tuitionFeeList = new ArrayList<>();
 

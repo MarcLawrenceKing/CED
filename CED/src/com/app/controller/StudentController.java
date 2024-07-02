@@ -1,7 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The StudentController class holds Student functionalities.
+ * 
+ * This class interconnects with the database thru SQL Queries defined in the QueryConstant class
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.controller;
 
@@ -10,10 +14,6 @@ import com.app.model.Student;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
-/**
- *
- * @author marcl
- */
 public class StudentController extends DBConnection {
 
     public void addStudent(Student student) {
@@ -32,7 +32,7 @@ public class StudentController extends DBConnection {
             statement.setString(9, student.getCampus());
 
             int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) { // exception handling
+            if (rowsInserted > 0) {
                 System.out.println("\nStudent record added successfully!");
             } else {
                 System.out.println("\nFailed to add student record.");

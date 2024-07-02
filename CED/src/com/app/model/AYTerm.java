@@ -1,19 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The AYTerm class is a Model responsible for the data logic and storing and retrieving data.
+ * 
+ * This class is being used in its own controller to allow manipulation of data.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.model;
 
-/**
- *
- * @author marcl
- */
 public class AYTerm {
     public String AYTerm;
-    
-    public AYTerm(){
-        
+
+    public AYTerm() {
+
     }
 
     public String getAYTerm() {
@@ -23,6 +23,5 @@ public class AYTerm {
     public void setAYTerm(String AYTerm) {
         this.AYTerm = AYTerm;
     }
-    
-    
+
 }

@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The MainMenu class contains the GUI to present the main options.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.view;
 
@@ -18,7 +20,7 @@ public class MainMenu {
         CRUDMenu cm = new CRUDMenu();
         GenerateCOR gc = new GenerateCOR();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("\n** Options **");
         System.out.println("[C] Create record");
         System.out.println("[R] Read record");

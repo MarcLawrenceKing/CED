@@ -1,21 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The Program class is a Model responsible for the data logic and storing and retrieving data.
+ * 
+ * This class is being used in its own controller to allow manipulation of data.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.model;
 
-/**
- *
- * @author marcl
- */
 public class Program {
     private String ProgramCode;
     private String ProgramDesc;
     private float MaxUnitsEnrolled;
-    
-    public Program(){
-        
+
+    public Program() {
+
     }
 
     public Program(String ProgramCode, String ProgramDesc, float MaxUnitsEnrolled) {
@@ -47,7 +47,5 @@ public class Program {
     public void setMaxUnitsEnrolled(float MaxUnitsEnrolled) {
         this.MaxUnitsEnrolled = MaxUnitsEnrolled;
     }
-    
-    
-    
+
 }

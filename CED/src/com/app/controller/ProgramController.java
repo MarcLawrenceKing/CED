@@ -1,7 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The ProgramController class holds Program functionalities.
+ * 
+ * This class interconnects with the database thru SQL Queries defined in the QueryConstant class
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.controller;
 
@@ -9,10 +13,6 @@ import com.app.CED.DBConnection;
 import com.app.model.Program;
 import java.util.ArrayList;
 
-/**
- *
- * @author marcl
- */
 public class ProgramController extends DBConnection {
 
     public ArrayList<Program> readProgram() {

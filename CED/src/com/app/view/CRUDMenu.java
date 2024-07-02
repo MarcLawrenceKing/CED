@@ -1,16 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The CRUDMenu class contains the GUI to present all CRUD options.
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
  */
 package com.app.view;
 
 import java.util.Scanner;
 
-/**
- *
- * @author marcl
- */
 public class CRUDMenu {
 
     public void createMenu() {

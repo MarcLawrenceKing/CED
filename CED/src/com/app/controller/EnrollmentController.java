@@ -1,3 +1,12 @@
+/*
+ * The EnrollmentController class holds Enrollment functionalities.
+ * 
+ * This class interconnects with the database thru SQL Queries defined in the QueryConstant class
+ * 
+ * @authors Cedric Mangasi, Dominic Aldas, Marc King, Sheila Orapa
+ *
+ * @version 07/02/2024
+ */
 package com.app.controller;
 
 import com.app.CED.DBConnection;
@@ -18,7 +27,7 @@ public class EnrollmentController extends DBConnection {
             statement.setString(3, enrollment.getAYTerm());
 
             int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) { // exception handling
+            if (rowsInserted > 0) {
                 System.out.println("\nEnrollment record added successfully!");
             } else {
                 System.out.println("\nFailed to add Enrollment record.");
