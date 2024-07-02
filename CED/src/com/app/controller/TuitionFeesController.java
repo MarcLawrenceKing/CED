@@ -20,7 +20,7 @@ public class TuitionFeesController extends DBConnection { // dito natapos
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM tuitionfees ORDER BY TuitionFeesID");
+            result = state.executeQuery(READ_TUITIONFEES);
 
             while (result.next()) {
                 TuitionFees tuitionFeeToList = new TuitionFees();
@@ -43,7 +43,7 @@ public class TuitionFeesController extends DBConnection { // dito natapos
 
         try {
             connect();
-            prep = con.prepareStatement("DELETE FROM tuitionfees WHERE TuitionFeesID = ?");
+            prep = con.prepareStatement(DELETE_TUITIONFEES);
             prep.setInt(1, tuitionfees.getTuitionFeesID());
 
             prep.executeUpdate();

@@ -6,7 +6,6 @@
 package com.app.controller;
 
 import com.app.CED.DBConnection;
-import com.app.model.Fees;
 import com.app.model.Program;
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ public class ProgramController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM program ORDER BY ProgramCode");
+            result = state.executeQuery(READ_PROGRAM);
 
             while (result.next()) {
                 Program programToList = new Program();

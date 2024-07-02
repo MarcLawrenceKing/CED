@@ -12,7 +12,7 @@ public class EnrollmentController extends DBConnection {
             connect();
 
             PreparedStatement statement = con
-                    .prepareStatement("INSERT INTO enrollment (StudentID, ScheduleID, AYTerm) VALUES (?, ?, ?)");
+                    .prepareStatement(ADD_ENROLLMENT);
             statement.setInt(1, enrollment.getStudentID());
             statement.setInt(2, enrollment.getScheduleID());
             statement.setString(3, enrollment.getAYTerm());
@@ -34,7 +34,7 @@ public class EnrollmentController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM enrollment ORDER BY EnrollmentID");
+            result = state.executeQuery(READ_ENROLLMENT);
 
             while (result.next()) {
                 Enrollment enrollmentToList = new Enrollment();
@@ -58,7 +58,7 @@ public class EnrollmentController extends DBConnection {
 
         try {
             connect();
-            prep = con.prepareStatement("DELETE FROM Enrollment WHERE EnrollmentID = ?");
+            prep = con.prepareStatement(DELETE_ENROLLMENT);
             prep.setInt(1, enrollment.getEnrollmentID());
 
             prep.executeUpdate();

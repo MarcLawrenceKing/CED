@@ -6,7 +6,6 @@
 package com.app.controller;
 
 import com.app.CED.DBConnection;
-import java.sql.SQLException;
 
 /**
  *
@@ -19,14 +18,8 @@ public class CORController extends DBConnection {
         try {
             connect();
 
-            // Fetch Student Details
-            String studentDetailsQuery = "SELECT s.StudentID, s.StudentName, s.AYTerm, p.ProgramDesc, p.ProgramCode, "
-                    + "s.Campus, s.YearLevel, s.Section, s.Address, s.ContactNumber, s.Scholarship "
-                    + "FROM Student s "
-                    + "JOIN Program p ON s.ProgramCode = p.ProgramCode "
-                    + "WHERE s.StudentID = ?";
-
-            prep = con.prepareStatement(studentDetailsQuery);
+            // Fetch Student Details           
+            prep = con.prepareStatement(STUDENT_DETAILS);
             prep.setInt(1, studentID);
             result = prep.executeQuery();
 
@@ -56,13 +49,8 @@ public class CORController extends DBConnection {
                 System.out.println("ContactNumber: " + contactNumber);
                 System.out.println();
 
-                // Fetch Subject Details
-                String subjectDetailsQuery = "SELECT sc.SubjectCode, su.SubjectTitle, sc.SectionCode, su.TuitionUnits, su.CreditedUnits, sc.Schedule "
-                        + "FROM Schedule sc "
-                        + "JOIN Subject su ON sc.SubjectCode = su.SubjectCode "
-                        + "JOIN Enrollment en ON sc.ScheduleID = en.ScheduleID "
-                        + "WHERE en.StudentID = ? AND sc.AYTerm = ?";
-                prep = con.prepareStatement(subjectDetailsQuery);
+                // Fetch Subject Details                
+                prep = con.prepareStatement(SUBJECT_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
@@ -82,22 +70,14 @@ public class CORController extends DBConnection {
 
                 System.out.println();
 
-                // Reset the totals to zero
-                String resetTotalsQuery = "UPDATE Tuition "
-                        + "SET TotalTuitionUnits = 0, TotalCreditedUnits = 0, TuitionAmount = 0, TotalFees = 0, TotalAssessment = 0 "
-                        + "WHERE StudentID = ? AND AYTerm = ?";
-                prep = con.prepareStatement(resetTotalsQuery);
+                // Reset the totals to zero               
+                prep = con.prepareStatement(RESET_TOTALS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 prep.executeUpdate();
 
-                // Fetch Fees Details
-                String feesDetailsQuery = "SELECT f.FeeName, f.Amount "
-                        + "FROM TuitionFees tf "
-                        + "JOIN Fees f ON tf.FeeName = f.FeeName "
-                        + "JOIN Tuition t ON tf.TuitionID = t.TuitionID "
-                        + "WHERE t.StudentID = ? AND t.AYTerm = ?";
-                prep = con.prepareStatement(feesDetailsQuery);
+                // Fetch Fees Details                
+                prep = con.prepareStatement(FEES_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
@@ -113,17 +93,8 @@ public class CORController extends DBConnection {
 
                 System.out.println();
 
-                // Fetch Tuition Details
-                String tuitionDetailsQuery = "SELECT p.MaxUnitsEnrolled, SUM(su.TuitionUnits) AS TotalTuitionUnits, SUM(su.CreditedUnits) AS TotalCreditedUnits, t.TotalAssessment "
-                        + "FROM Tuition t "
-                        + "JOIN Enrollment en ON t.StudentID = en.StudentID AND t.AYTerm = en.AYTerm "
-                        + "JOIN Schedule sc ON en.ScheduleID = sc.ScheduleID "
-                        + "JOIN Subject su ON sc.SubjectCode = su.SubjectCode "
-                        + "JOIN Student st ON t.StudentID = st.StudentID "
-                        + "JOIN Program p ON st.ProgramCode = p.ProgramCode "
-                        + "WHERE t.StudentID = ? AND t.AYTerm = ? "
-                        + "GROUP BY p.MaxUnitsEnrolled";
-                prep = con.prepareStatement(tuitionDetailsQuery);
+                // Fetch Tuition Details               
+                prep = con.prepareStatement(TUITION_DETAILS);
                 prep.setInt(1, studentID);
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
@@ -156,12 +127,8 @@ public class CORController extends DBConnection {
                 System.out.printf("MaxUnitsEnrolled: %-12.1f | TotalTuitionUnits: %-12.1f | TotalCreditedUnits: %-12.1f | TotalAssessment: %-20s%n",
                         maxUnitsEnrolled, totalTuitionUnits, totalCreditedUnits, totalAssessment);
 
-                // Update the database with the calculated totals
-                String updateTotalsQuery = "UPDATE Tuition "
-                        + "SET TotalTuitionUnits = ?, TotalCreditedUnits = ?, TuitionAmount = ?, TotalFees = ?, TotalAssessment = ?"
-                        + "WHERE StudentID = ? AND AYTerm = ?";
-
-                prep = con.prepareStatement(updateTotalsQuery);
+                // Update the database with the calculated totals               
+                prep = con.prepareStatement(UPDATE_TOTALS);
                 prep.setFloat(1, totalTuitionUnits);
                 prep.setFloat(2, totalCreditedUnits);
                 prep.setFloat(3, tuitionAmount);

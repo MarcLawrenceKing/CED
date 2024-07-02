@@ -19,7 +19,7 @@ public class SectionController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement("INSERT INTO section (SectionCode) VALUES (?)");
+            PreparedStatement statement = con.prepareStatement(ADD_SECTION);
             statement.setString(1, section.getSectionCode());
 
             int rowsInserted = statement.executeUpdate();
@@ -39,7 +39,7 @@ public class SectionController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM section ORDER BY SectionCode");
+            result = state.executeQuery(READ_SECTION);
 
             while (result.next()) {
                 Section sectionToList = new Section();

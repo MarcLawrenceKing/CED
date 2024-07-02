@@ -20,7 +20,7 @@ public class TuitionController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM tuition ORDER BY TuitionID");
+            result = state.executeQuery(READ_TUITION);
 
             while (result.next()) {
                 Tuition tuitionToList = new Tuition();

@@ -21,7 +21,7 @@ public class FeesController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM fees ORDER BY FeeName");
+            result = state.executeQuery(READ_FEES);
 
             while (result.next()) {
                 Fees feesToList = new Fees();

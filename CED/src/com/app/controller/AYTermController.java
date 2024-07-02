@@ -11,7 +11,7 @@ public class AYTermController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement("INSERT INTO ayterm (AYTerm) VALUES (?)");
+            PreparedStatement statement = con.prepareStatement(ADD_AYTERM);
             statement.setString(1, ayterm.getAYTerm());
 
             int rowsInserted = statement.executeUpdate();
@@ -31,7 +31,7 @@ public class AYTermController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM ayterm ORDER BY ayterm");
+            result = state.executeQuery(READ_AYTERM);
 
             while (result.next()) {
                 AYTerm aytermToList = new AYTerm();

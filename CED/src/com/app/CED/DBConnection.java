@@ -1,18 +1,14 @@
 package com.app.CED;
 
+import com.app.model.QueryConstant;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class DBConnection {
+public class DBConnection implements QueryConstant {
 
-    final static String URL = "jdbc:mysql://localhost:3306/cor_db";
-    final static String USERNAME = "root";
-    final static String PASSWORD = "";
-    final static String DRIVER = "com.mysql.jdbc.Driver";
-    
     protected static Connection con;
     protected static PreparedStatement prep;
     protected static Statement state;

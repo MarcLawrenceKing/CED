@@ -20,8 +20,7 @@ public class StudentController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement(
-                    "INSERT INTO student (StudentName, AYTerm, Scholarship, ProgramCode, ContactNumber, Address, YearLevel, Section, Campus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement statement = con.prepareStatement(ADD_STUDENT);
             statement.setString(1, student.getStudentName());
             statement.setString(2, student.getAYTerm());
             statement.setString(3, student.getScholarship());
@@ -49,7 +48,7 @@ public class StudentController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM student ORDER BY StudentID");
+            result = state.executeQuery(READ_STUDENT);
 
             while (result.next()) {
                 Student studentToList = new Student();
@@ -79,7 +78,7 @@ public class StudentController extends DBConnection {
 
         try {
             connect();
-            prep = con.prepareStatement("UPDATE student SET AYTerm = ?, Scholarship = ?, ProgramCode = ?, StudentName = ?, ContactNumber = ?, Address = ?, YearLevel = ?, Section = ?, Campus = ? WHERE StudentID = ?");
+            prep = con.prepareStatement(UPDATE_STUDENT);
             prep.setString(1, student.getAYTerm());
             prep.setString(2, student.getScholarship());
             prep.setString(3, student.getProgramCode());

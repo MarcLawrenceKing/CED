@@ -21,7 +21,7 @@ public class SubjectController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM subject ORDER BY SubjectCode");
+            result = state.executeQuery(READ_SUBJECT);
 
             while (result.next()) {
                 Subject subjectToList = new Subject();

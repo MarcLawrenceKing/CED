@@ -20,7 +20,7 @@ public class ScholarshipController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM scholarship ORDER BY Scholarship");
+            result = state.executeQuery(READ_SCHOLARSHIP);
 
             while (result.next()) {
                 Scholarship scholarshipToList = new Scholarship();

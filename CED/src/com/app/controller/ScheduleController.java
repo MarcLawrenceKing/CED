@@ -20,7 +20,7 @@ public class ScheduleController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement("INSERT INTO schedule (SubjectCode, SectionCode, AYTerm, Schedule) VALUES (?, ?, ?, ?)");
+            PreparedStatement statement = con.prepareStatement(ADD_SCHEDULE);
             statement.setString(1, schedule.getSubjectCode());
             statement.setString(2, schedule.getSectionCode());
             statement.setString(3, schedule.getAYTerm());
@@ -43,7 +43,7 @@ public class ScheduleController extends DBConnection {
         try {
             connect();
             state = con.createStatement();
-            result = state.executeQuery("SELECT * FROM schedule ORDER BY ScheduleID");
+            result = state.executeQuery(READ_SCHEDULE);
 
             while (result.next()) {
                 Schedule scheduleToList = new Schedule();
@@ -68,7 +68,7 @@ public class ScheduleController extends DBConnection {
 
         try {
             connect();
-            prep = con.prepareStatement("UPDATE schedule SET Schedule = ? WHERE ScheduleID = ?");
+            prep = con.prepareStatement(UPDATE_SCHEDULE);
             prep.setString(1, schedule.getSchedule());
             prep.setInt(2, schedule.getScheduleID());
             prep.executeUpdate();
