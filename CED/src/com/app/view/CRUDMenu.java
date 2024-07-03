@@ -21,7 +21,9 @@ public class CRUDMenu {
         System.out.println("[3] Create Schedule record");
         System.out.println("[4] Create Section record");
         System.out.println("[5] Create Student record");
-        System.out.println("[6] Back");
+        System.out.println("[6] Create Tuition record");
+        System.out.println("[7] Create TuitionFees record");
+        System.out.println("[8] Back");
         System.out.print("Enter your choice: ");
         char choice = sc.next().charAt(0);
 
@@ -42,6 +44,12 @@ public class CRUDMenu {
                 cm.createStudent();
                 break;
             case '6':
+                cm.createTuition();
+                break;
+            case '7':
+                cm.createTuitionFees();
+                break;
+            case '8':
                 mm.mainmenu();
                 break;
             default:

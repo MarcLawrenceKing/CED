@@ -14,6 +14,25 @@ import com.app.model.TuitionFees;
 import java.util.ArrayList;
 
 public class TuitionFeesController extends DBConnection {
+    
+    public void addTuitionFees(TuitionFees tuitionfees) {
+        try {
+            connect();
+
+            prep = con.prepareStatement(ADD_TUITIONFEES);
+            prep.setInt(1, tuitionfees.getTuitionID());
+            prep.setString(2, tuitionfees.getFeeName());
+
+            int rowsInserted = prep.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("\nTuitionFee record added successfully!");
+            } else {
+                System.out.println("\nFailed to add nTuitionFee record.");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     public ArrayList<TuitionFees> readtuitionFee() {
         ArrayList<TuitionFees> tuitionFeeList = new ArrayList<>();
 

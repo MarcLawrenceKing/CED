@@ -15,6 +15,7 @@ public class Tuition {
     private String AYTerm;
     private float TotalTuitionUnits;
     private float TotalCreditedUnits;
+    private float TotalFees;
     private float TuitionAmount;
     private String TotalAssessment;
 
@@ -22,13 +23,14 @@ public class Tuition {
 
     }
 
-    public Tuition(int TuitionID, int StudentID, String AYTerm, float TotalTuitionUnits, float TotalCreditedUnits,
+    public Tuition(int TuitionID, int StudentID, String AYTerm, float TotalTuitionUnits, float TotalCreditedUnits, float TotalFees,
             float TuitionAmount, String TotalAssessment) {
         this.TuitionID = TuitionID;
         this.StudentID = StudentID;
         this.AYTerm = AYTerm;
         this.TotalTuitionUnits = TotalTuitionUnits;
         this.TotalCreditedUnits = TotalCreditedUnits;
+        this.TotalFees = TotalFees;
         this.TuitionAmount = TuitionAmount;
         this.TotalAssessment = TotalAssessment;
     }
@@ -71,6 +73,14 @@ public class Tuition {
 
     public void setTotalCreditedUnits(float TotalCreditedUnits) {
         this.TotalCreditedUnits = TotalCreditedUnits;
+    }
+    
+    public float getTotalFees() {
+        return TotalFees;
+    }
+
+    public void setTotalFees(float TotalFees) {
+        this.TotalFees = TotalFees;
     }
 
     public float getTuitionAmount() {

@@ -82,9 +82,11 @@ public interface QueryConstant {
         String READ_SUBJECT = "SELECT * FROM subject ORDER BY SubjectCode";
 
         // TuitionController
+        String ADD_TUITION = "INSERT INTO tuition (StudentID, AYTerm) VALUES (?, ?)";
         String READ_TUITION = "SELECT * FROM tuition ORDER BY TuitionID";
 
         // TuitionFeesController
+        String ADD_TUITIONFEES = "INSERT INTO tuitionfees (TuitionID, FeeName) VALUES (?, ?)";
         String READ_TUITIONFEES = "SELECT * FROM tuitionfees ORDER BY TuitionFeesID";
         String DELETE_TUITIONFEES = "DELETE FROM tuitionfees WHERE TuitionFeesID = ?";
 }

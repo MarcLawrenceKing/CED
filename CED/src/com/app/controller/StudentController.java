@@ -11,7 +11,6 @@ package com.app.controller;
 
 import com.app.CED.DBConnection;
 import com.app.model.Student;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class StudentController extends DBConnection {
@@ -20,18 +19,18 @@ public class StudentController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement(ADD_STUDENT);
-            statement.setString(1, student.getStudentName());
-            statement.setString(2, student.getAYTerm());
-            statement.setString(3, student.getScholarship());
-            statement.setString(4, student.getProgramCode());
-            statement.setString(5, student.getContactNumber());
-            statement.setString(6, student.getAddress());
-            statement.setString(7, student.getYearLevel());
-            statement.setString(8, student.getSection());
-            statement.setString(9, student.getCampus());
+            prep = con.prepareStatement(ADD_STUDENT);
+            prep.setString(1, student.getStudentName());
+            prep.setString(2, student.getAYTerm());
+            prep.setString(3, student.getScholarship());
+            prep.setString(4, student.getProgramCode());
+            prep.setString(5, student.getContactNumber());
+            prep.setString(6, student.getAddress());
+            prep.setString(7, student.getYearLevel());
+            prep.setString(8, student.getSection());
+            prep.setString(9, student.getCampus());
 
-            int rowsInserted = statement.executeUpdate();
+            int rowsInserted = prep.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("\nStudent record added successfully!");
             } else {

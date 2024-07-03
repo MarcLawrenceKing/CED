@@ -11,7 +11,6 @@ package com.app.controller;
 
 import com.app.CED.DBConnection;
 import com.app.model.Enrollment;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class EnrollmentController extends DBConnection {
@@ -20,13 +19,12 @@ public class EnrollmentController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con
-                    .prepareStatement(ADD_ENROLLMENT);
-            statement.setInt(1, enrollment.getStudentID());
-            statement.setInt(2, enrollment.getScheduleID());
-            statement.setString(3, enrollment.getAYTerm());
+            prep = con.prepareStatement(ADD_ENROLLMENT);
+            prep.setInt(1, enrollment.getStudentID());
+            prep.setInt(2, enrollment.getScheduleID());
+            prep.setString(3, enrollment.getAYTerm());
 
-            int rowsInserted = statement.executeUpdate();
+            int rowsInserted = prep.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("\nEnrollment record added successfully!");
             } else {

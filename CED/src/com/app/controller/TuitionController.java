@@ -14,6 +14,24 @@ import com.app.model.Tuition;
 import java.util.ArrayList;
 
 public class TuitionController extends DBConnection {
+    public void addTuition(Tuition tuition) {
+        try {
+            connect();
+
+            prep = con.prepareStatement(ADD_TUITION);
+            prep.setInt(1, tuition.getStudentID());
+            prep.setString(2, tuition.getAYTerm());
+
+            int rowsInserted = prep.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("\nTuition record added successfully!");
+            } else {
+                System.out.println("\nFailed to add Tuition record.");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     public ArrayList<Tuition> readTuition() {
         ArrayList<Tuition> tuitionList = new ArrayList<>();
 
@@ -27,9 +45,10 @@ public class TuitionController extends DBConnection {
                 tuitionToList.setTuitionID(result.getInt("TuitionID"));
                 tuitionToList.setStudentID(result.getInt("StudentID"));
                 tuitionToList.setAYTerm(result.getString("AYTerm"));
-                tuitionToList.setTotalTuitionUnits(result.getInt("TotalTuitionUnits"));
-                tuitionToList.setTotalCreditedUnits(result.getInt("TotalCreditedUnits"));
-                tuitionToList.setTuitionAmount(result.getInt("TuitionAmount"));
+                tuitionToList.setTotalTuitionUnits(result.getFloat("TotalTuitionUnits"));
+                tuitionToList.setTotalCreditedUnits(result.getFloat("TotalCreditedUnits"));
+                tuitionToList.setTotalFees(result.getFloat("TotalFees"));
+                tuitionToList.setTuitionAmount(result.getFloat("TuitionAmount"));
                 tuitionToList.setTotalAssessment(result.getString("TotalAssessment"));
 
                 tuitionList.add(tuitionToList);

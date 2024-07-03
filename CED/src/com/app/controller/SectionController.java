@@ -11,7 +11,6 @@ package com.app.controller;
 
 import com.app.CED.DBConnection;
 import com.app.model.Section;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class SectionController extends DBConnection {
@@ -19,10 +18,10 @@ public class SectionController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement(ADD_SECTION);
-            statement.setString(1, section.getSectionCode());
+            prep = con.prepareStatement(ADD_SECTION);
+            prep.setString(1, section.getSectionCode());
 
-            int rowsInserted = statement.executeUpdate();
+            int rowsInserted = prep.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("\nSection record added successfully!");
             } else {

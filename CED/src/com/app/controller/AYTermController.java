@@ -11,7 +11,6 @@ package com.app.controller;
 
 import com.app.CED.DBConnection;
 import com.app.model.AYTerm;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class AYTermController extends DBConnection {
@@ -20,10 +19,10 @@ public class AYTermController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement(ADD_AYTERM);
-            statement.setString(1, ayterm.getAYTerm());
+            prep = con.prepareStatement(ADD_AYTERM);
+            prep.setString(1, ayterm.getAYTerm());
 
-            int rowsInserted = statement.executeUpdate();
+            int rowsInserted = prep.executeUpdate();
             if (rowsInserted > 0) { // exception handling
                 System.out.println("\nAY Term record added successfully!");
             } else {

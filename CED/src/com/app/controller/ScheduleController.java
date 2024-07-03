@@ -11,7 +11,6 @@ package com.app.controller;
 
 import com.app.CED.DBConnection;
 import com.app.model.Schedule;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class ScheduleController extends DBConnection {
@@ -20,13 +19,13 @@ public class ScheduleController extends DBConnection {
         try {
             connect();
 
-            PreparedStatement statement = con.prepareStatement(ADD_SCHEDULE);
-            statement.setString(1, schedule.getSubjectCode());
-            statement.setString(2, schedule.getSectionCode());
-            statement.setString(3, schedule.getAYTerm());
-            statement.setString(4, schedule.getSchedule());
+            prep = con.prepareStatement(ADD_SCHEDULE);
+            prep.setString(1, schedule.getSubjectCode());
+            prep.setString(2, schedule.getSectionCode());
+            prep.setString(3, schedule.getAYTerm());
+            prep.setString(4, schedule.getSchedule());
 
-            int rowsInserted = statement.executeUpdate();
+            int rowsInserted = prep.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("\nSchedule record added successfully!");
             } else {

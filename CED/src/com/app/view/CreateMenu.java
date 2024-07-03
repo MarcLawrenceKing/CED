@@ -12,11 +12,15 @@ import com.app.controller.EnrollmentController;
 import com.app.controller.ScheduleController;
 import com.app.controller.SectionController;
 import com.app.controller.StudentController;
+import com.app.controller.TuitionController;
+import com.app.controller.TuitionFeesController;
 import com.app.model.AYTerm;
 import com.app.model.Enrollment;
 import com.app.model.Schedule;
 import com.app.model.Section;
 import com.app.model.Student;
+import com.app.model.Tuition;
+import com.app.model.TuitionFees;
 import java.util.Scanner;
 
 public class CreateMenu {
@@ -216,6 +220,82 @@ public class CreateMenu {
             } else {
                 System.out.println("\n**Updated Student records**");
                 rm.readStudent();
+                cm.createMenu();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            cm.createMenu();
+        }
+    }
+    
+    public void createTuition() {
+        ReadMenu rm = new ReadMenu();
+        CRUDMenu cm = new CRUDMenu();
+        Tuition tuition = new Tuition();
+        TuitionController tc = new TuitionController();
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.println("\n** Create Tuition record **");
+            System.out.print("Enter StudentID: ");
+            tuition.setStudentID(sc.nextInt());
+            sc.nextLine();
+            System.out.print("Enter AY Term: ");
+            tuition.setAYTerm(sc.nextLine());
+            
+            System.out.print("Create a new tuition record? [Y/N]: ");
+            char choice = sc.next().toLowerCase().charAt(0);
+
+            if (choice == 'y') {
+                tc.addTuition(tuition);
+            } else {
+                System.out.println("Record was not created.");
+            }
+            System.out.print("\nDo you want to add more tuition record? [Y/N]: ");
+            char add_more = sc.next().toLowerCase().charAt(0);
+
+            if (add_more == 'y') {
+                createStudent();
+            } else {
+                System.out.println("\n**Updated Tuition records**");
+                rm.readTuition();
+                cm.createMenu();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            cm.createMenu();
+        }
+    }
+    
+    public void createTuitionFees() {
+        ReadMenu rm = new ReadMenu();
+        CRUDMenu cm = new CRUDMenu();
+        TuitionFees tuitionfees = new TuitionFees();
+        TuitionFeesController tfc = new TuitionFeesController();
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.println("\n** Create TuitionFees record **");
+            System.out.print("Enter TuitionID: ");
+            tuitionfees.setTuitionID(sc.nextInt());
+            sc.nextLine();
+            System.out.print("Enter FeeName: ");
+            tuitionfees.setFeeName(sc.nextLine());
+            
+            System.out.print("Create a new tuitionfees record? [Y/N]: ");
+            char choice = sc.next().toLowerCase().charAt(0);
+
+            if (choice == 'y') {
+                tfc.addTuitionFees(tuitionfees);
+            } else {
+                System.out.println("Record was not created.");
+            }
+            System.out.print("\nDo you want to add more tuitionfees record? [Y/N]: ");
+            char add_more = sc.next().toLowerCase().charAt(0);
+
+            if (add_more == 'y') {
+                createTuitionFees();
+            } else {
+                System.out.println("\n**Updated TuitionFees records**");
+                rm.readTuitionFees();
                 cm.createMenu();
             }
         } catch (Exception e) {
