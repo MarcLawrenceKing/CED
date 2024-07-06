@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2024 at 09:11 AM
+-- Generation Time: Jul 03, 2024 at 06:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -37,6 +37,7 @@ CREATE TABLE `ayterm` (
 
 INSERT INTO `ayterm` (`AYTerm`) VALUES
 ('2022-2023 First Sem'),
+('2022-2023 Second Sem'),
 ('2023-2024 First Sem'),
 ('2023-2024 Second Sem'),
 ('2023-2024 Third Sem');
@@ -61,7 +62,9 @@ CREATE TABLE `enrollment` (
 INSERT INTO `enrollment` (`EnrollmentID`, `StudentID`, `ScheduleID`, `AYTerm`) VALUES
 (1, 240001, 1, '2023-2024 Second Sem'),
 (2, 240001, 2, '2023-2024 Second Sem'),
-(3, 240002, 1, '2023-2024 Second Sem');
+(3, 240002, 1, '2023-2024 Second Sem'),
+(5, 240004, 1, '2023-2024 Second Sem'),
+(6, 240004, 2, '2023-2024 Second Sem');
 
 -- --------------------------------------------------------
 
@@ -200,7 +203,7 @@ INSERT INTO `student` (`StudentID`, `AYTerm`, `Scholarship`, `ProgramCode`, `Stu
 (240001, '2023-2024 Second Sem', 'NON-SCHOLAR', 'BSIT', 'Kyle Cedric Mangasi', '09157283461', '8700 McDollibee Street Brgy 177 Bagong Gising Quezon City', 'Second Year', '3', 'Manila'),
 (240002, '2023-2024 Second Sem', 'FULL', 'BSIT', 'Sheila Mae Orapa', '09234567891', '234 Cornelia St Brgy San Miguel Manila City', 'Second Year', '3', 'Manila'),
 (240003, '2023-2024 Second Sem', 'FULL', 'BSIT', 'Dominic Syd Aldas', '09887778888', '234 New Mexico Brgy 145 Gotham City', 'Second Year', '3', 'Manila'),
-(240004, '2023-2024 First Sem', 'NON-SCHOLAR', 'BSCS', 'Baka Renejay To', '231231', 'Bataan', 'First Year', '2', 'Manila');
+(240004, '2023-2024 Second Sem', 'NON-SCHOLAR', 'BSIT', 'Daina DeTorres', '231231', '254 Quintos St Burgos Ave Pasig City', 'Second Year', '3', 'Manila');
 
 -- --------------------------------------------------------
 
@@ -220,30 +223,30 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`SubjectCode`, `SubjectTitle`, `TuitionUnits`, `CreditedUnits`) VALUES
-('COMP 006', 'Data Structures and Algorithms', '3.0', '5.0'),
-('COMP 007', 'Operating Systems', '3.0', '5.0'),
-('COMP 008', 'Data Communications and Networking', '3.0', '5.0'),
+('COMP 006', 'Data Structures and Algorithms', '5.0', '3.0'),
+('COMP 007', 'Operating Systems', '5.0', '3.0'),
+('COMP 008', 'Data Communications and Networking', '5.0', '3.0'),
 ('COMP 009', 'Object Oriented Programming', '5.0', '3.0'),
 ('COMP 010', 'Information Management', '5.0', '3.0'),
 ('COMP 012', 'Network Administration', '5.0', '3.0'),
 ('COMP 013', 'Human Computer Interaction', '3.0', '3.0'),
 ('COMP 014', 'Quantitative Methods with Modeling and Simulation', '3.0', '3.0'),
-('COMP 20073', 'Discrete Structures 2', '3.0', NULL),
-('COMP 20113', 'Technical Documentation and Presentation Skills in ICT', '3.0', NULL),
-('COMP 30023', 'Logic Design and Digital Computer Circuits', '3.0', NULL),
-('COSC 30013', 'Modeling and Simulation', '3.0', NULL),
-('COSC 30033', 'Design and Analysis of Algorithms', '3.0', NULL),
-('COSC-FE1', 'CS Free Elective 1', '3.0', NULL),
-('COSC-FE2', 'CS Free Elective 2', '3.0', NULL),
-('ELEC IT-FE1', 'BSIT Free Elective 1', '3.0', '5.0'),
+('COMP 20073', 'Discrete Structures 2', '3.0', '3.0'),
+('COMP 20113', 'Technical Documentation and Presentation Skills in ICT', '3.0', '3.0'),
+('COMP 30023', 'Logic Design and Digital Computer Circuits', '3.0', '3.0'),
+('COSC 30013', 'Modeling and Simulation', '3.0', '3.0'),
+('COSC 30033', 'Design and Analysis of Algorithms', '3.0', '3.0'),
+('COSC-FE1', 'CS Free Elective 1', '3.0', '3.0'),
+('COSC-FE2', 'CS Free Elective 2', '3.0', '3.0'),
+('ELEC IT-FE1', 'BSIT Free Elective 1', '3.0', '3.0'),
 ('ELECT IT-FE2', 'BSIT Free Elective 2', '3.0', '3.0'),
-('GEED 001', 'Understanding the Self/Pag-unawa sa Sarili', '3.0', '5.0'),
-('GEED 028', 'Reading Visual Arts', '3.0', '5.0'),
-('GEED 10073', 'Art Appreciation', '3.0', NULL),
-('GEED 10093', 'Ethics', '3.0', NULL),
-('GEED 10223', 'World Literature', '3.0', NULL),
-('GEED 20113', 'People and the Earth`s Ecosystem', '3.0', NULL),
-('INTE 201', 'Programming 3 (Structured Programming)', '3.0', '5.0'),
+('GEED 001', 'Understanding the Self/Pag-unawa sa Sarili', '5.0', '3.0'),
+('GEED 028', 'Reading Visual Arts', '3.0', '3.0'),
+('GEED 10073', 'Art Appreciation', '3.0', '3.0'),
+('GEED 10093', 'Ethics', '3.0', '3.0'),
+('GEED 10223', 'World Literature', '3.0', '3.0'),
+('GEED 20113', 'People and the Earth`s Ecosystem', '3.0', '3.0'),
+('INTE 201', 'Programming 3 (Structured Programming)', '5.0', '3.0'),
 ('INTE 202', 'Integrative Programming and Technologies', '5.0', '3.0'),
 ('PATHFIT 3', 'Physical Activity Towards Health and Fitness 3', '2.0', NULL),
 ('PATHFIT 4', 'Physical Activity Towards Health and Fitness', '2.0', '2.0'),
@@ -274,7 +277,8 @@ CREATE TABLE `tuition` (
 INSERT INTO `tuition` (`TuitionID`, `StudentID`, `AYTerm`, `TotalTuitionUnits`, `TotalCreditedUnits`, `TuitionAmount`, `TotalFees`, `TotalAssessment`) VALUES
 (1, 240001, '2023-2024 Second Sem', '10.0', '6.0', '100.00', '129.00', '229.0'),
 (2, 240003, '2023-2024 Second Sem', NULL, NULL, NULL, NULL, NULL),
-(3, 240002, '2023-2024 Second Sem', '0.0', '0.0', '0.00', '0.00', '0.00');
+(3, 240002, '2023-2024 Second Sem', '5.0', '3.0', '50.00', '0.00', 'FREE'),
+(4, 240004, '2023-2024 Second Sem', '10.0', '6.0', '100.00', '462.00', '562.0');
 
 -- --------------------------------------------------------
 
@@ -295,7 +299,9 @@ CREATE TABLE `tuitionfees` (
 INSERT INTO `tuitionfees` (`TuitionFeesID`, `TuitionID`, `FeeName`) VALUES
 (1, 1, 'CULTURAL FEE'),
 (2, 1, 'GUIDANCE FEE'),
-(4, 2, 'GUIDANCE FEE');
+(4, 2, 'GUIDANCE FEE'),
+(5, 4, 'CULTURAL FEE'),
+(6, 4, 'SIS FEE');
 
 --
 -- Indexes for dumped tables
@@ -388,7 +394,7 @@ ALTER TABLE `tuitionfees`
 -- AUTO_INCREMENT for table `enrollment`
 --
 ALTER TABLE `enrollment`
-  MODIFY `EnrollmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `EnrollmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `schedule`
@@ -406,13 +412,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `tuition`
 --
 ALTER TABLE `tuition`
-  MODIFY `TuitionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `TuitionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tuitionfees`
 --
 ALTER TABLE `tuitionfees`
-  MODIFY `TuitionFeesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `TuitionFeesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
