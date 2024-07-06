@@ -36,7 +36,8 @@ public interface QueryConstant {
                         + "FROM TuitionFees tf "
                         + "JOIN Fees f ON tf.FeeName = f.FeeName "
                         + "JOIN Tuition t ON tf.TuitionID = t.TuitionID "
-                        + "WHERE t.StudentID = ? AND t.AYTerm = ?";
+                        + "WHERE t.StudentID = ? AND t.AYTerm = ?"
+                        + "ORDER BY f.FeeName";
         String TUITION_DETAILS = "SELECT p.MaxUnitsEnrolled, SUM(su.TuitionUnits) AS TotalTuitionUnits, SUM(su.CreditedUnits) AS TotalCreditedUnits, t.TotalAssessment "
                         + "FROM Tuition t "
                         + "JOIN Enrollment en ON t.StudentID = en.StudentID AND t.AYTerm = en.AYTerm "
