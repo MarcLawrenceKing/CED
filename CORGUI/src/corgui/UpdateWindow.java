@@ -56,7 +56,7 @@ public class UpdateWindow extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Update Record");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 100));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1260, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 100));
 
@@ -92,6 +92,11 @@ public class UpdateWindow extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 updateScheduleMouseExited(evt);
+            }
+        });
+        updateSchedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateScheduleActionPerformed(evt);
             }
         });
         jPanel2.add(updateSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 660, 73));
@@ -189,8 +194,18 @@ public class UpdateWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_updateStudentMouseExited
 
     private void updateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStudentActionPerformed
-        // TODO add your handling code here:
+        UpdateStudentRecord USR = new UpdateStudentRecord();
+        USR.show();
+        
+        dispose();
     }//GEN-LAST:event_updateStudentActionPerformed
+
+    private void updateScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateScheduleActionPerformed
+        UpdateScheduleRecord USCR = new UpdateScheduleRecord();
+        USCR.show();
+        dispose();
+        
+    }//GEN-LAST:event_updateScheduleActionPerformed
 
     /**
      * @param args the command line arguments

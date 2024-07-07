@@ -47,7 +47,6 @@ public class CreateAYTerm extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         next = new javax.swing.JButton();
-        back = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         enrollmentCreate = new javax.swing.JButton();
         enrollmentcbb1 = new javax.swing.JComboBox<>();
@@ -214,19 +213,6 @@ public class CreateAYTerm extends javax.swing.JFrame {
         });
         jPanel6.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 0, 160, 50));
 
-        back.setFont(new java.awt.Font("OldSansBlack", 0, 24)); // NOI18N
-        back.setForeground(new java.awt.Color(255, 255, 255));
-        back.setText("< BACK");
-        back.setBorder(null);
-        back.setBorderPainted(false);
-        back.setContentAreaFilled(false);
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
-        jPanel6.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 160, 50));
-
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -300,7 +286,7 @@ public class CreateAYTerm extends javax.swing.JFrame {
         jLabel3.setText("ENTER ACADEMIC YEAR AND TERM:");
         jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
-        create.setBackground(new java.awt.Color(51, 51, 51));
+        create.setBackground(new java.awt.Color(0, 102, 0));
         create.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         create.setForeground(new java.awt.Color(255, 255, 255));
         create.setText("CREATE");
@@ -348,13 +334,6 @@ public class CreateAYTerm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aytermActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        MenuOptions menuOptions = new MenuOptions();
-        menuOptions.show(); //display frame called
-        
-        dispose();
-    }//GEN-LAST:event_backActionPerformed
-
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         CreateSchedule sched = new CreateSchedule();
         sched.show();
@@ -395,9 +374,9 @@ public class CreateAYTerm extends javax.swing.JFrame {
             stud.show();
             }
         } else if (res == JOptionPane.NO_OPTION){
-            
+            ayterm.show();
         }
-        
+        dispose();
         
     }//GEN-LAST:event_createActionPerformed
 
@@ -442,7 +421,6 @@ public class CreateAYTerm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ayterm;
-    private javax.swing.JButton back;
     private javax.swing.JButton create;
     private javax.swing.JTextField createAYTermField;
     private javax.swing.JButton enrollment;

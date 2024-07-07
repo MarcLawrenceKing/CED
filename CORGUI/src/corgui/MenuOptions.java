@@ -105,6 +105,11 @@ public class MenuOptions extends javax.swing.JFrame {
                 deleteButtonMouseExited(evt);
             }
         });
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 379, 432, 73));
 
         generateButton.setBackground(new java.awt.Color(255, 255, 255));
@@ -116,6 +121,11 @@ public class MenuOptions extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 generateButtonMouseExited(evt);
+            }
+        });
+        generateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateButtonActionPerformed(evt);
             }
         });
         jPanel2.add(generateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 470, 432, 69));
@@ -231,13 +241,15 @@ public class MenuOptions extends javax.swing.JFrame {
 
     private void signoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonActionPerformed
         LandingPage landingPage = new LandingPage();
- 
+        MenuOptions menu = new MenuOptions();
+        
         int result = JOptionPane.showConfirmDialog(this, "Are you sure you want to sign out?", "Confirmation", JOptionPane.YES_NO_OPTION);
         if (result == JOptionPane.YES_OPTION) {
         landingPage.show();
         } else if (result == JOptionPane.NO_OPTION) {
-      
+            menu.show();
         }
+        dispose();
     }//GEN-LAST:event_signoutButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -314,6 +326,18 @@ public class MenuOptions extends javax.swing.JFrame {
         update.show();
         dispose();
     }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        DeleteWindow deleteW = new DeleteWindow();
+        deleteW.show();
+        dispose();
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
+        GenerateCOR generate = new GenerateCOR();
+        generate.show();
+        dispose();
+    }//GEN-LAST:event_generateButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -39,17 +39,17 @@ public class CreateSchedule extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         create = new javax.swing.JButton();
-        schedulecbb1 = new javax.swing.JComboBox<>();
+        schedulecbb2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        createscheduleField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        schedulecbb2 = new javax.swing.JComboBox<>();
+        schedulecbb3 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         scheduleArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        schedulecbb1 = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         next = new javax.swing.JButton();
@@ -169,7 +169,7 @@ public class CreateSchedule extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        create.setBackground(new java.awt.Color(51, 51, 51));
+        create.setBackground(new java.awt.Color(0, 102, 0));
         create.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         create.setForeground(new java.awt.Color(255, 255, 255));
         create.setText("CREATE");
@@ -181,22 +181,13 @@ public class CreateSchedule extends javax.swing.JFrame {
         });
         jPanel1.add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 460, 220, 80));
 
-        schedulecbb1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        schedulecbb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(schedulecbb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 390, 40));
+        schedulecbb2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        schedulecbb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(schedulecbb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 390, 40));
 
         jLabel4.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
         jLabel4.setText("SUBJECT CODE:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        createscheduleField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        createscheduleField.setToolTipText("");
-        createscheduleField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createscheduleFieldActionPerformed(evt);
-            }
-        });
-        jPanel1.add(createscheduleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 390, 40));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
         jLabel3.setText("ENTER SECTION CODE:");
@@ -206,9 +197,9 @@ public class CreateSchedule extends javax.swing.JFrame {
         jLabel5.setText("ENTER A.Y-TERM:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
-        schedulecbb2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        schedulecbb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(schedulecbb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 390, 40));
+        schedulecbb3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        schedulecbb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(schedulecbb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 390, 40));
 
         jLabel6.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
         jLabel6.setText("ENTER SCHEDULE:");
@@ -219,7 +210,7 @@ public class CreateSchedule extends javax.swing.JFrame {
         scheduleArea1.setRows(5);
         jScrollPane1.setViewportView(scheduleArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 390, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 390, 130));
 
         jLabel2.setBackground(new java.awt.Color(112, 0, 0));
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
@@ -232,6 +223,10 @@ public class CreateSchedule extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(112, 0, 0));
         jLabel7.setText("EX: W 09:00:00 - 12:00:00 LAB");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, -1, -1));
+
+        schedulecbb1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        schedulecbb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(schedulecbb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 390, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1280, 570));
 
@@ -355,10 +350,6 @@ public class CreateSchedule extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_nextActionPerformed
 
-    private void createscheduleFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createscheduleFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createscheduleFieldActionPerformed
-
     private void enrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentActionPerformed
         CreateEnrollment enroll = new CreateEnrollment();
         enroll.show();
@@ -392,8 +383,9 @@ public class CreateSchedule extends javax.swing.JFrame {
             enroll.show();
             }
         } else if (res == JOptionPane.NO_OPTION){
-            
+            sched.show();
         }
+        dispose();
     }//GEN-LAST:event_createActionPerformed
 
     /**
@@ -435,7 +427,6 @@ public class CreateSchedule extends javax.swing.JFrame {
     private javax.swing.JButton ayterm;
     private javax.swing.JButton back;
     private javax.swing.JButton create;
-    private javax.swing.JTextField createscheduleField;
     private javax.swing.JButton enrollment;
     private javax.swing.JButton enrollmentCreate;
     private javax.swing.JComboBox<String> enrollmentcbb1;
@@ -463,6 +454,7 @@ public class CreateSchedule extends javax.swing.JFrame {
     private javax.swing.JTextArea scheduleArea1;
     private javax.swing.JComboBox<String> schedulecbb1;
     private javax.swing.JComboBox<String> schedulecbb2;
+    private javax.swing.JComboBox<String> schedulecbb3;
     private javax.swing.JButton section;
     private javax.swing.JButton student;
     private javax.swing.JButton tuition;

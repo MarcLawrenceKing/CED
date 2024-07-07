@@ -274,7 +274,7 @@ public class CreateStudent extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        create.setBackground(new java.awt.Color(51, 51, 51));
+        create.setBackground(new java.awt.Color(0, 102, 0));
         create.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         create.setForeground(new java.awt.Color(255, 255, 255));
         create.setText("CREATE");
@@ -447,8 +447,9 @@ public class CreateStudent extends javax.swing.JFrame {
             sec.show();
             }
         } else if (res == JOptionPane.NO_OPTION){
-            
+            stud.show();
         }
+        dispose();
     }//GEN-LAST:event_createActionPerformed
 
     /**

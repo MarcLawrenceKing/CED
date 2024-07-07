@@ -38,20 +38,20 @@ public class ReadWindow extends javax.swing.JFrame {
         signoutButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        readAYTerm = new javax.swing.JButton();
+        readEnrollment = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         gobackmenu = new javax.swing.JButton();
-        readAYTerm1 = new javax.swing.JButton();
-        readAYTerm2 = new javax.swing.JButton();
-        readAYTerm4 = new javax.swing.JButton();
-        readAYTerm5 = new javax.swing.JButton();
-        readAYTerm6 = new javax.swing.JButton();
-        readAYTerm7 = new javax.swing.JButton();
-        readAYTerm8 = new javax.swing.JButton();
-        readAYTerm9 = new javax.swing.JButton();
-        readAYTerm10 = new javax.swing.JButton();
-        readAYTerm11 = new javax.swing.JButton();
+        readAYTerm = new javax.swing.JButton();
+        readSchedule = new javax.swing.JButton();
+        readFees = new javax.swing.JButton();
+        readProgram = new javax.swing.JButton();
+        readSection = new javax.swing.JButton();
+        readScholarship = new javax.swing.JButton();
+        readSubject = new javax.swing.JButton();
+        readStudent = new javax.swing.JButton();
+        readTuition = new javax.swing.JButton();
+        readTuitonFees = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,24 +123,24 @@ public class ReadWindow extends javax.swing.JFrame {
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 100));
 
-        readAYTerm.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm.setText("SHOW TABLE");
-        readAYTerm.setBorder(null);
-        readAYTerm.addMouseListener(new java.awt.event.MouseAdapter() {
+        readEnrollment.setBackground(new java.awt.Color(255, 255, 255));
+        readEnrollment.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readEnrollment.setText("SHOW ENROLLMENT TABLE");
+        readEnrollment.setBorder(null);
+        readEnrollment.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTermMouseEntered(evt);
+                readEnrollmentMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTermMouseExited(evt);
+                readEnrollmentMouseExited(evt);
             }
         });
-        readAYTerm.addActionListener(new java.awt.event.ActionListener() {
+        readEnrollment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTermActionPerformed(evt);
+                readEnrollmentActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 250, 70));
+        jPanel3.add(readEnrollment, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 250, 70));
 
         jPanel6.setBackground(new java.awt.Color(112, 0, 0));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -162,195 +162,195 @@ public class ReadWindow extends javax.swing.JFrame {
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1290, 50));
 
-        readAYTerm1.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm1.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm1.setText("SHOW A.Y - TERM TABLE");
-        readAYTerm1.setBorder(null);
-        readAYTerm1.addMouseListener(new java.awt.event.MouseAdapter() {
+        readAYTerm.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm.setText("SHOW A.Y - TERM TABLE");
+        readAYTerm.setBorder(null);
+        readAYTerm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm1MouseEntered(evt);
+                readAYTermMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm1MouseExited(evt);
+                readAYTermMouseExited(evt);
             }
         });
-        readAYTerm1.addActionListener(new java.awt.event.ActionListener() {
+        readAYTerm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm1ActionPerformed(evt);
+                readAYTermActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 250, 70));
+        jPanel3.add(readAYTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 250, 70));
 
-        readAYTerm2.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm2.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm2.setText("SHOW TABLE");
-        readAYTerm2.setBorder(null);
-        readAYTerm2.addMouseListener(new java.awt.event.MouseAdapter() {
+        readSchedule.setBackground(new java.awt.Color(255, 255, 255));
+        readSchedule.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readSchedule.setText("SHOW SCHEDULE TABLE");
+        readSchedule.setBorder(null);
+        readSchedule.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm2MouseEntered(evt);
+                readScheduleMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm2MouseExited(evt);
+                readScheduleMouseExited(evt);
             }
         });
-        readAYTerm2.addActionListener(new java.awt.event.ActionListener() {
+        readSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm2ActionPerformed(evt);
+                readScheduleActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 70));
+        jPanel3.add(readSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 70));
 
-        readAYTerm4.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm4.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm4.setText("SHOW TABLE");
-        readAYTerm4.setBorder(null);
-        readAYTerm4.addMouseListener(new java.awt.event.MouseAdapter() {
+        readFees.setBackground(new java.awt.Color(255, 255, 255));
+        readFees.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readFees.setText("SHOW FEES TABLE");
+        readFees.setBorder(null);
+        readFees.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm4MouseEntered(evt);
+                readFeesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm4MouseExited(evt);
+                readFeesMouseExited(evt);
             }
         });
-        readAYTerm4.addActionListener(new java.awt.event.ActionListener() {
+        readFees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm4ActionPerformed(evt);
+                readFeesActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 250, 70));
+        jPanel3.add(readFees, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 250, 70));
 
-        readAYTerm5.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm5.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm5.setText("SHOW TABLE");
-        readAYTerm5.setBorder(null);
-        readAYTerm5.addMouseListener(new java.awt.event.MouseAdapter() {
+        readProgram.setBackground(new java.awt.Color(255, 255, 255));
+        readProgram.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readProgram.setText("SHOW PROGRAM TABLE");
+        readProgram.setBorder(null);
+        readProgram.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm5MouseEntered(evt);
+                readProgramMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm5MouseExited(evt);
+                readProgramMouseExited(evt);
             }
         });
-        readAYTerm5.addActionListener(new java.awt.event.ActionListener() {
+        readProgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm5ActionPerformed(evt);
+                readProgramActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 250, 70));
+        jPanel3.add(readProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 250, 70));
 
-        readAYTerm6.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm6.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm6.setText("SHOW TABLE");
-        readAYTerm6.setBorder(null);
-        readAYTerm6.addMouseListener(new java.awt.event.MouseAdapter() {
+        readSection.setBackground(new java.awt.Color(255, 255, 255));
+        readSection.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readSection.setText("SHOW SECTION TABLE ");
+        readSection.setBorder(null);
+        readSection.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm6MouseEntered(evt);
+                readSectionMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm6MouseExited(evt);
+                readSectionMouseExited(evt);
             }
         });
-        readAYTerm6.addActionListener(new java.awt.event.ActionListener() {
+        readSection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm6ActionPerformed(evt);
+                readSectionActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 250, 70));
+        jPanel3.add(readSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 250, 70));
 
-        readAYTerm7.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm7.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm7.setText("SHOW TABLE");
-        readAYTerm7.setBorder(null);
-        readAYTerm7.addMouseListener(new java.awt.event.MouseAdapter() {
+        readScholarship.setBackground(new java.awt.Color(255, 255, 255));
+        readScholarship.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readScholarship.setText("SHOW SCHOLARSHIP TABLE");
+        readScholarship.setBorder(null);
+        readScholarship.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm7MouseEntered(evt);
+                readScholarshipMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm7MouseExited(evt);
+                readScholarshipMouseExited(evt);
             }
         });
-        readAYTerm7.addActionListener(new java.awt.event.ActionListener() {
+        readScholarship.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm7ActionPerformed(evt);
+                readScholarshipActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 250, 70));
+        jPanel3.add(readScholarship, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 250, 70));
 
-        readAYTerm8.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm8.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm8.setText("SHOW TABLE");
-        readAYTerm8.setBorder(null);
-        readAYTerm8.addMouseListener(new java.awt.event.MouseAdapter() {
+        readSubject.setBackground(new java.awt.Color(255, 255, 255));
+        readSubject.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readSubject.setText("SHOW SUBJECT TABLE");
+        readSubject.setBorder(null);
+        readSubject.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm8MouseEntered(evt);
+                readSubjectMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm8MouseExited(evt);
+                readSubjectMouseExited(evt);
             }
         });
-        readAYTerm8.addActionListener(new java.awt.event.ActionListener() {
+        readSubject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm8ActionPerformed(evt);
+                readSubjectActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 250, 70));
+        jPanel3.add(readSubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 250, 70));
 
-        readAYTerm9.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm9.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm9.setText("SHOW TABLE");
-        readAYTerm9.setBorder(null);
-        readAYTerm9.addMouseListener(new java.awt.event.MouseAdapter() {
+        readStudent.setBackground(new java.awt.Color(255, 255, 255));
+        readStudent.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readStudent.setText("SHOW STUDENT TABLE");
+        readStudent.setBorder(null);
+        readStudent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm9MouseEntered(evt);
+                readStudentMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm9MouseExited(evt);
+                readStudentMouseExited(evt);
             }
         });
-        readAYTerm9.addActionListener(new java.awt.event.ActionListener() {
+        readStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm9ActionPerformed(evt);
+                readStudentActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 250, 70));
+        jPanel3.add(readStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 250, 70));
 
-        readAYTerm10.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm10.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm10.setText("SHOW TABLE");
-        readAYTerm10.setBorder(null);
-        readAYTerm10.addMouseListener(new java.awt.event.MouseAdapter() {
+        readTuition.setBackground(new java.awt.Color(255, 255, 255));
+        readTuition.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readTuition.setText("SHOW TUITION TABLE");
+        readTuition.setBorder(null);
+        readTuition.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm10MouseEntered(evt);
+                readTuitionMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm10MouseExited(evt);
+                readTuitionMouseExited(evt);
             }
         });
-        readAYTerm10.addActionListener(new java.awt.event.ActionListener() {
+        readTuition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm10ActionPerformed(evt);
+                readTuitionActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 250, 70));
+        jPanel3.add(readTuition, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 250, 70));
 
-        readAYTerm11.setBackground(new java.awt.Color(255, 255, 255));
-        readAYTerm11.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        readAYTerm11.setText("SHOW TABLE");
-        readAYTerm11.setBorder(null);
-        readAYTerm11.addMouseListener(new java.awt.event.MouseAdapter() {
+        readTuitonFees.setBackground(new java.awt.Color(255, 255, 255));
+        readTuitonFees.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readTuitonFees.setText("SHOW TUITION FEES TABLE");
+        readTuitonFees.setBorder(null);
+        readTuitonFees.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                readAYTerm11MouseEntered(evt);
+                readTuitonFeesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                readAYTerm11MouseExited(evt);
+                readTuitonFeesMouseExited(evt);
             }
         });
-        readAYTerm11.addActionListener(new java.awt.event.ActionListener() {
+        readTuitonFees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readAYTerm11ActionPerformed(evt);
+                readTuitonFeesActionPerformed(evt);
             }
         });
-        jPanel3.add(readAYTerm11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 250, 70));
+        jPanel3.add(readTuitonFees, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 250, 70));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 720));
 
@@ -373,9 +373,19 @@ public class ReadWindow extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_gobackmenuActionPerformed
 
-    private void readAYTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTermActionPerformed
+    private void readEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readEnrollmentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTermActionPerformed
+    }//GEN-LAST:event_readEnrollmentActionPerformed
+
+    private void readEnrollmentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readEnrollmentMouseEntered
+        readEnrollment.setBackground(new Color(112, 0, 0));
+        readEnrollment.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readEnrollmentMouseEntered
+
+    private void readEnrollmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readEnrollmentMouseExited
+        readEnrollment.setBackground(Color.WHITE);
+        readEnrollment.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readEnrollmentMouseExited
 
     private void readAYTermMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTermMouseEntered
         readAYTerm.setBackground(new Color(112, 0, 0));
@@ -387,125 +397,135 @@ public class ReadWindow extends javax.swing.JFrame {
         readAYTerm.setForeground(Color.BLACK);
     }//GEN-LAST:event_readAYTermMouseExited
 
-    private void readAYTerm1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm1MouseEntered
+    private void readAYTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTermActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm1MouseEntered
+    }//GEN-LAST:event_readAYTermActionPerformed
 
-    private void readAYTerm1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm1MouseExited
+    private void readScheduleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readScheduleMouseEntered
+        readSchedule.setBackground(new Color(112, 0, 0));
+        readSchedule.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readScheduleMouseEntered
 
-    private void readAYTerm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm1ActionPerformed
+    private void readScheduleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readScheduleMouseExited
+        readSchedule.setBackground(Color.WHITE);
+        readSchedule.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readScheduleMouseExited
 
-    private void readAYTerm2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm2MouseEntered
+    private void readScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readScheduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm2MouseEntered
+    }//GEN-LAST:event_readScheduleActionPerformed
 
-    private void readAYTerm2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm2MouseExited
+    private void readFeesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readFeesMouseEntered
+        readFees.setBackground(new Color(112, 0, 0));
+        readFees.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readFeesMouseEntered
 
-    private void readAYTerm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm2ActionPerformed
+    private void readFeesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readFeesMouseExited
+        readFees.setBackground(Color.WHITE);
+        readFees.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readFeesMouseExited
 
-    private void readAYTerm4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm4MouseEntered
+    private void readFeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readFeesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm4MouseEntered
+    }//GEN-LAST:event_readFeesActionPerformed
 
-    private void readAYTerm4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm4MouseExited
+    private void readProgramMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readProgramMouseEntered
+        readProgram.setBackground(new Color(112, 0, 0));
+        readProgram.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readProgramMouseEntered
 
-    private void readAYTerm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm4ActionPerformed
+    private void readProgramMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readProgramMouseExited
+        readProgram.setBackground(Color.WHITE);
+        readProgram.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readProgramMouseExited
 
-    private void readAYTerm5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm5MouseEntered
+    private void readProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readProgramActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm5MouseEntered
+    }//GEN-LAST:event_readProgramActionPerformed
 
-    private void readAYTerm5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm5MouseExited
+    private void readSectionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readSectionMouseEntered
+        readSection.setBackground(new Color(112, 0, 0));
+        readSection.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readSectionMouseEntered
 
-    private void readAYTerm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm5ActionPerformed
+    private void readSectionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readSectionMouseExited
+        readSection.setBackground(Color.WHITE);
+        readSection.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readSectionMouseExited
 
-    private void readAYTerm6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm6MouseEntered
+    private void readSectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readSectionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm6MouseEntered
+    }//GEN-LAST:event_readSectionActionPerformed
 
-    private void readAYTerm6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm6MouseExited
+    private void readScholarshipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readScholarshipMouseEntered
+        readScholarship.setBackground(new Color(112, 0, 0));
+        readScholarship.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readScholarshipMouseEntered
 
-    private void readAYTerm6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm6ActionPerformed
+    private void readScholarshipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readScholarshipMouseExited
+        readScholarship.setBackground(Color.WHITE);
+        readScholarship.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readScholarshipMouseExited
 
-    private void readAYTerm7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm7MouseEntered
+    private void readScholarshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readScholarshipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm7MouseEntered
+    }//GEN-LAST:event_readScholarshipActionPerformed
 
-    private void readAYTerm7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm7MouseExited
+    private void readSubjectMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readSubjectMouseEntered
+        readSubject.setBackground(new Color(112, 0, 0));
+        readSubject.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readSubjectMouseEntered
 
-    private void readAYTerm7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm7ActionPerformed
+    private void readSubjectMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readSubjectMouseExited
+        readSubject.setBackground(Color.WHITE);
+        readSubject.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readSubjectMouseExited
 
-    private void readAYTerm8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm8MouseEntered
+    private void readSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readSubjectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm8MouseEntered
+    }//GEN-LAST:event_readSubjectActionPerformed
 
-    private void readAYTerm8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm8MouseExited
+    private void readStudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readStudentMouseEntered
+        readStudent.setBackground(new Color(112, 0, 0));
+        readStudent.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readStudentMouseEntered
 
-    private void readAYTerm8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm8ActionPerformed
+    private void readStudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readStudentMouseExited
+        readStudent.setBackground(Color.WHITE);
+        readStudent.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readStudentMouseExited
 
-    private void readAYTerm9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm9MouseEntered
+    private void readStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm9MouseEntered
+    }//GEN-LAST:event_readStudentActionPerformed
 
-    private void readAYTerm9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm9MouseExited
+    private void readTuitionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readTuitionMouseEntered
+        readTuition.setBackground(new Color(112, 0, 0));
+        readTuition.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readTuitionMouseEntered
 
-    private void readAYTerm9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm9ActionPerformed
+    private void readTuitionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readTuitionMouseExited
+        readTuition.setBackground(Color.WHITE);
+        readTuition.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readTuitionMouseExited
 
-    private void readAYTerm10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm10MouseEntered
+    private void readTuitionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readTuitionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm10MouseEntered
+    }//GEN-LAST:event_readTuitionActionPerformed
 
-    private void readAYTerm10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm10MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm10MouseExited
+    private void readTuitonFeesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readTuitonFeesMouseEntered
+        readTuitonFees.setBackground(new Color(112, 0, 0));
+        readTuitonFees.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readTuitonFeesMouseEntered
 
-    private void readAYTerm10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm10ActionPerformed
+    private void readTuitonFeesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readTuitonFeesMouseExited
+        readTuitonFees.setBackground(Color.WHITE);
+        readTuitonFees.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readTuitonFeesMouseExited
 
-    private void readAYTerm11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm11MouseEntered
+    private void readTuitonFeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readTuitonFeesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm11MouseEntered
-
-    private void readAYTerm11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm11MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm11MouseExited
-
-    private void readAYTerm11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_readAYTerm11ActionPerformed
+    }//GEN-LAST:event_readTuitonFeesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,17 +574,17 @@ public class ReadWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton readAYTerm;
-    private javax.swing.JButton readAYTerm1;
-    private javax.swing.JButton readAYTerm10;
-    private javax.swing.JButton readAYTerm11;
-    private javax.swing.JButton readAYTerm2;
-    private javax.swing.JButton readAYTerm4;
-    private javax.swing.JButton readAYTerm5;
-    private javax.swing.JButton readAYTerm6;
-    private javax.swing.JButton readAYTerm7;
-    private javax.swing.JButton readAYTerm8;
-    private javax.swing.JButton readAYTerm9;
+    private javax.swing.JButton readEnrollment;
+    private javax.swing.JButton readFees;
+    private javax.swing.JButton readProgram;
+    private javax.swing.JButton readSchedule;
+    private javax.swing.JButton readScholarship;
+    private javax.swing.JButton readSection;
+    private javax.swing.JButton readStudent;
+    private javax.swing.JButton readSubject;
     private javax.swing.JTable readTable;
+    private javax.swing.JButton readTuition;
+    private javax.swing.JButton readTuitonFees;
     private javax.swing.JButton signoutButton;
     // End of variables declaration//GEN-END:variables
 }
