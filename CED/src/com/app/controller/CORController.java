@@ -100,28 +100,30 @@ public class CORController extends DBConnection {
                 float maxUnitsEnrolled = 0;
                 float totalTuitionUnits = 0;
                 float totalCreditedUnits = 0;
-                float tuitionAmount = 0;
+                float tuitionAmountInFloat = 0;
                 float totalAssessmentInFloat = 0; // to solve for total assessment
+                String tuitionAmount = "";
                 String totalAssessment = "";
 
                 if (result.next()) {                    
                     maxUnitsEnrolled = result.getFloat("MaxUnitsEnrolled");
                     totalTuitionUnits = result.getFloat("TotalTuitionUnits");
                     totalCreditedUnits = result.getFloat("TotalCreditedUnits");
-                    tuitionAmount = totalTuitionUnits * 10;
+                    tuitionAmountInFloat = totalTuitionUnits * 10;
                     if (scholarship.equals("FULL")) {
                         totalAssessment = "FREE"; // free if full scholar
                     }
                     if (scholarship.equals("PARTIAL")) {
-                        totalAssessmentInFloat = (totalFees + tuitionAmount) / 2; // total is divided by 2                 
+                        totalAssessmentInFloat = (totalFees + tuitionAmountInFloat) / 2; // total is divided by 2                 
                         totalAssessment = String.format("%.2f", totalAssessmentInFloat);
                     }
                     if (scholarship.equals("NON-SCHOLAR")) {
-                        totalAssessmentInFloat = totalFees + tuitionAmount; // calculate total assessment
+                        totalAssessmentInFloat = totalFees + tuitionAmountInFloat; // calculate total assessment
                         totalAssessment = String.format("%.2f", totalAssessmentInFloat);
                     }
                 }
-                System.out.println("Tuition Amount                      |      "+tuitionAmount);
+                tuitionAmount = String.format("%.2f", tuitionAmountInFloat);
+                System.out.println("Tuition Amount                      |     "+tuitionAmount);
                 System.out.println();
                 
                 System.out.printf(
@@ -132,7 +134,7 @@ public class CORController extends DBConnection {
                 prep = con.prepareStatement(UPDATE_TOTALS);
                 prep.setFloat(1, totalTuitionUnits);
                 prep.setFloat(2, totalCreditedUnits);
-                prep.setFloat(3, tuitionAmount);
+                prep.setFloat(3, tuitionAmountInFloat);
                 prep.setFloat(4, totalFees);
                 prep.setString(5, totalAssessment);
                 prep.setInt(6, studentID);
