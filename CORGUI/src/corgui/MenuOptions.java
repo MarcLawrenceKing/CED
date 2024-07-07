@@ -131,6 +131,11 @@ public class MenuOptions extends javax.swing.JFrame {
                 updateButtonMouseExited(evt);
             }
         });
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 288, 432, 73));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
@@ -236,7 +241,7 @@ public class MenuOptions extends javax.swing.JFrame {
     }//GEN-LAST:event_signoutButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        AYTerm ayterm = new AYTerm();
+        CreateAYTerm ayterm = new CreateAYTerm();
         ayterm.show();
         
         dispose();
@@ -298,8 +303,17 @@ public class MenuOptions extends javax.swing.JFrame {
     }//GEN-LAST:event_generateButtonMouseExited
 
     private void readButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readButtonActionPerformed
-        // TODO add your handling code here:
+        ReadWindow read = new ReadWindow();
+        read.show();
+        
+        dispose();
     }//GEN-LAST:event_readButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        UpdateWindow update = new UpdateWindow();
+        update.show();
+        dispose();
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     /**
      * @param args the command line arguments

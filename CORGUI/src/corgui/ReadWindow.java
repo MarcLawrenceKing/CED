@@ -5,6 +5,8 @@
  */
 package corgui;
 
+import java.awt.Color;
+
 /**
  *
  * @author Administrator
@@ -27,21 +29,483 @@ public class ReadWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        readTable = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        signoutButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        readAYTerm = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        gobackmenu = new javax.swing.JButton();
+        readAYTerm1 = new javax.swing.JButton();
+        readAYTerm2 = new javax.swing.JButton();
+        readAYTerm4 = new javax.swing.JButton();
+        readAYTerm5 = new javax.swing.JButton();
+        readAYTerm6 = new javax.swing.JButton();
+        readAYTerm7 = new javax.swing.JButton();
+        readAYTerm8 = new javax.swing.JButton();
+        readAYTerm9 = new javax.swing.JButton();
+        readAYTerm10 = new javax.swing.JButton();
+        readAYTerm11 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
+
+        readTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        readTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(readTable);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
-        pack();
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 640, 720));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(112, 0, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        signoutButton.setFont(new java.awt.Font("OldSansBlack", 0, 36)); // NOI18N
+        signoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        signoutButton.setText("Sign out");
+        signoutButton.setBorder(null);
+        signoutButton.setBorderPainted(false);
+        signoutButton.setContentAreaFilled(false);
+        signoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                signoutButtonMouseEntered(evt);
+            }
+        });
+        signoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signoutButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(signoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 196, 100));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/signout.png"))); // NOI18N
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 0, 30, 100));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Read Record");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 100));
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 100));
+
+        readAYTerm.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm.setText("SHOW TABLE");
+        readAYTerm.setBorder(null);
+        readAYTerm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTermMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTermMouseExited(evt);
+            }
+        });
+        readAYTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTermActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 250, 70));
+
+        jPanel6.setBackground(new java.awt.Color(112, 0, 0));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 30, 50));
+
+        gobackmenu.setFont(new java.awt.Font("OldSansBlack", 0, 24)); // NOI18N
+        gobackmenu.setForeground(new java.awt.Color(255, 255, 255));
+        gobackmenu.setText("Go back to Menu");
+        gobackmenu.setBorderPainted(false);
+        gobackmenu.setContentAreaFilled(false);
+        gobackmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gobackmenuActionPerformed(evt);
+            }
+        });
+        jPanel6.add(gobackmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 220, 50));
+
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1290, 50));
+
+        readAYTerm1.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm1.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm1.setText("SHOW A.Y - TERM TABLE");
+        readAYTerm1.setBorder(null);
+        readAYTerm1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm1MouseExited(evt);
+            }
+        });
+        readAYTerm1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 250, 70));
+
+        readAYTerm2.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm2.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm2.setText("SHOW TABLE");
+        readAYTerm2.setBorder(null);
+        readAYTerm2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm2MouseExited(evt);
+            }
+        });
+        readAYTerm2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 250, 70));
+
+        readAYTerm4.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm4.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm4.setText("SHOW TABLE");
+        readAYTerm4.setBorder(null);
+        readAYTerm4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm4MouseExited(evt);
+            }
+        });
+        readAYTerm4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 250, 70));
+
+        readAYTerm5.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm5.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm5.setText("SHOW TABLE");
+        readAYTerm5.setBorder(null);
+        readAYTerm5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm5MouseExited(evt);
+            }
+        });
+        readAYTerm5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 250, 70));
+
+        readAYTerm6.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm6.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm6.setText("SHOW TABLE");
+        readAYTerm6.setBorder(null);
+        readAYTerm6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm6MouseExited(evt);
+            }
+        });
+        readAYTerm6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm6ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 250, 70));
+
+        readAYTerm7.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm7.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm7.setText("SHOW TABLE");
+        readAYTerm7.setBorder(null);
+        readAYTerm7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm7MouseExited(evt);
+            }
+        });
+        readAYTerm7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm7ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 250, 70));
+
+        readAYTerm8.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm8.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm8.setText("SHOW TABLE");
+        readAYTerm8.setBorder(null);
+        readAYTerm8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm8MouseExited(evt);
+            }
+        });
+        readAYTerm8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm8ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 250, 70));
+
+        readAYTerm9.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm9.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm9.setText("SHOW TABLE");
+        readAYTerm9.setBorder(null);
+        readAYTerm9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm9MouseExited(evt);
+            }
+        });
+        readAYTerm9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm9ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 250, 70));
+
+        readAYTerm10.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm10.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm10.setText("SHOW TABLE");
+        readAYTerm10.setBorder(null);
+        readAYTerm10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm10MouseExited(evt);
+            }
+        });
+        readAYTerm10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm10ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 250, 70));
+
+        readAYTerm11.setBackground(new java.awt.Color(255, 255, 255));
+        readAYTerm11.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        readAYTerm11.setText("SHOW TABLE");
+        readAYTerm11.setBorder(null);
+        readAYTerm11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                readAYTerm11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                readAYTerm11MouseExited(evt);
+            }
+        });
+        readAYTerm11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readAYTerm11ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(readAYTerm11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 250, 70));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 720));
+
+        setSize(new java.awt.Dimension(1296, 759));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void signoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signoutButtonMouseEntered
+
+    }//GEN-LAST:event_signoutButtonMouseEntered
+
+    private void signoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonActionPerformed
+        
+    }//GEN-LAST:event_signoutButtonActionPerformed
+
+    private void gobackmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gobackmenuActionPerformed
+        MenuOptions menuOptions = new MenuOptions();
+        menuOptions.show(); //display frame called
+
+        dispose();
+    }//GEN-LAST:event_gobackmenuActionPerformed
+
+    private void readAYTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTermActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTermActionPerformed
+
+    private void readAYTermMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTermMouseEntered
+        readAYTerm.setBackground(new Color(112, 0, 0));
+        readAYTerm.setForeground(Color.WHITE);
+    }//GEN-LAST:event_readAYTermMouseEntered
+
+    private void readAYTermMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTermMouseExited
+        readAYTerm.setBackground(Color.WHITE);
+        readAYTerm.setForeground(Color.BLACK);
+    }//GEN-LAST:event_readAYTermMouseExited
+
+    private void readAYTerm1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm1MouseEntered
+
+    private void readAYTerm1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm1MouseExited
+
+    private void readAYTerm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm1ActionPerformed
+
+    private void readAYTerm2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm2MouseEntered
+
+    private void readAYTerm2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm2MouseExited
+
+    private void readAYTerm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm2ActionPerformed
+
+    private void readAYTerm4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm4MouseEntered
+
+    private void readAYTerm4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm4MouseExited
+
+    private void readAYTerm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm4ActionPerformed
+
+    private void readAYTerm5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm5MouseEntered
+
+    private void readAYTerm5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm5MouseExited
+
+    private void readAYTerm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm5ActionPerformed
+
+    private void readAYTerm6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm6MouseEntered
+
+    private void readAYTerm6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm6MouseExited
+
+    private void readAYTerm6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm6ActionPerformed
+
+    private void readAYTerm7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm7MouseEntered
+
+    private void readAYTerm7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm7MouseExited
+
+    private void readAYTerm7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm7ActionPerformed
+
+    private void readAYTerm8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm8MouseEntered
+
+    private void readAYTerm8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm8MouseExited
+
+    private void readAYTerm8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm8ActionPerformed
+
+    private void readAYTerm9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm9MouseEntered
+
+    private void readAYTerm9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm9MouseExited
+
+    private void readAYTerm9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm9ActionPerformed
+
+    private void readAYTerm10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm10MouseEntered
+
+    private void readAYTerm10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm10MouseExited
+
+    private void readAYTerm10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm10ActionPerformed
+
+    private void readAYTerm11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm11MouseEntered
+
+    private void readAYTerm11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_readAYTerm11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm11MouseExited
+
+    private void readAYTerm11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readAYTerm11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_readAYTerm11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +543,28 @@ public class ReadWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton gobackmenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton readAYTerm;
+    private javax.swing.JButton readAYTerm1;
+    private javax.swing.JButton readAYTerm10;
+    private javax.swing.JButton readAYTerm11;
+    private javax.swing.JButton readAYTerm2;
+    private javax.swing.JButton readAYTerm4;
+    private javax.swing.JButton readAYTerm5;
+    private javax.swing.JButton readAYTerm6;
+    private javax.swing.JButton readAYTerm7;
+    private javax.swing.JButton readAYTerm8;
+    private javax.swing.JButton readAYTerm9;
+    private javax.swing.JTable readTable;
+    private javax.swing.JButton signoutButton;
     // End of variables declaration//GEN-END:variables
 }
