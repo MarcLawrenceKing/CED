@@ -176,6 +176,7 @@ public class DeleteEnrollmentRecord extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Record for Enrollment successfully deleted!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to delete another record for Enrollment?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
+                dispose();
                 DER.show();
             } else if (result == JOptionPane.NO_OPTION) {
                 JOptionPane.showMessageDialog(null, "You will now return to the delete menu");

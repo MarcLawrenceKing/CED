@@ -369,6 +369,7 @@ public class CreateAYTerm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Record for AY - Term successfully created!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to create another record for A.Y - Term?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
+                
             ayterm.show();
             } else if (result == JOptionPane.NO_OPTION) {
             stud.show();

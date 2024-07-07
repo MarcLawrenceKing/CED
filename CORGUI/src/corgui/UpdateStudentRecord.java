@@ -264,6 +264,7 @@ public class UpdateStudentRecord extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Record for Student successfully updated!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to update another record for Student?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
+                dispose();
                 USR.show();
             } else if (result == JOptionPane.NO_OPTION) {
                 JOptionPane.showMessageDialog(null, "You will now return to the update menu");

@@ -197,6 +197,7 @@ public class UpdateScheduleRecord extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Record for Schedule successfully updated!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to update another record for Schedule?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
+                dispose();
                 USCR.show();
             } else if (result == JOptionPane.NO_OPTION) {
                 JOptionPane.showMessageDialog(null, "You will now return to the update menu");

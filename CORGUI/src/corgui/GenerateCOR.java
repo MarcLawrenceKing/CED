@@ -160,6 +160,7 @@ public class GenerateCOR extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "COR Generated successfully!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to generate another Certficate of Registration?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
+                dispose();
                 generate.show();
             } else if (result == JOptionPane.NO_OPTION) {
                 JOptionPane.showMessageDialog(null, "You will now return to the delete menu");
