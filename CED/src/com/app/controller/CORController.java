@@ -55,11 +55,11 @@ public class CORController extends DBConnection {
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
 
-                System.out.printf("%-12s | %-50s | %-12s | %-12s | %-15s | %-20s%n",
+                System.out.printf("%-12s | %-60s | %-12s | %-12s | %-15s | %-20s%n",
                         "SubjectCode", "SubjectTitle", "SectionCode", "TuitionUnits", "CreditedUnits", "Schedule");
 
                 while (result.next()) {
-                    System.out.printf("%-12s | %-50s | %-12s | %-12.1f | %-15.1f | %-20s%n",
+                    System.out.printf("%-12s | %-60s | %-12s | %-12.1f | %-15.1f | %-20s%n",
                             result.getString("SubjectCode"),
                             result.getString("SubjectTitle"),
                             result.getString("SectionCode"),
