@@ -55,11 +55,11 @@ public class CORController extends DBConnection {
                 prep.setString(2, ayTerm);
                 result = prep.executeQuery();
 
-                System.out.printf("%-12s | %-30s | %-12s | %-12s | %-15s | %-20s%n",
+                System.out.printf("%-12s | %-50s | %-12s | %-12s | %-15s | %-20s%n",
                         "SubjectCode", "SubjectTitle", "SectionCode", "TuitionUnits", "CreditedUnits", "Schedule");
 
                 while (result.next()) {
-                    System.out.printf("%-12s | %-30s | %-12s | %-12.2f | %-15.2f | %-20s%n",
+                    System.out.printf("%-12s | %-50s | %-12s | %-12.2f | %-15.2f | %-20s%n",
                             result.getString("SubjectCode"),
                             result.getString("SubjectTitle"),
                             result.getString("SectionCode"),
@@ -83,15 +83,13 @@ public class CORController extends DBConnection {
                 result = prep.executeQuery();
 
                 float totalFees = 0; // Accumulates all Amount associated with the StudentID and AYTerm
-                System.out.printf("%-15s | %10s%n", "FeeName", "Amount");
+                System.out.printf("%-35s | %10s%n", "FeeName", "Amount");
                 while (result.next()) {
-                    System.out.printf("%-15s | %10.2f%n",
+                    System.out.printf("%-35s | %10.2f%n",
                             result.getString("FeeName"),
-                            result.getDouble("Amount"));
+                            result.getFloat("Amount"));
                     totalFees += result.getFloat("Amount");
                 }
-
-                System.out.println();
 
                 // Fetch Tuition Details
                 prep = con.prepareStatement(TUITION_DETAILS);
@@ -106,7 +104,7 @@ public class CORController extends DBConnection {
                 float totalAssessmentInFloat = 0; // to solve for total assessment
                 String totalAssessment = "";
 
-                if (result.next()) {
+                if (result.next()) {                    
                     maxUnitsEnrolled = result.getFloat("MaxUnitsEnrolled");
                     totalTuitionUnits = result.getFloat("TotalTuitionUnits");
                     totalCreditedUnits = result.getFloat("TotalCreditedUnits");
@@ -115,15 +113,17 @@ public class CORController extends DBConnection {
                         totalAssessment = "FREE"; // free if full scholar
                     }
                     if (scholarship.equals("PARTIAL")) {
-                        totalAssessmentInFloat = (totalFees + tuitionAmount) / 2; // total is divided by 2
-                        totalAssessment = Float.toString(totalAssessmentInFloat);
+                        totalAssessmentInFloat = (totalFees + tuitionAmount) / 2; // total is divided by 2                 
+                        totalAssessment = String.format("%.2f", totalAssessmentInFloat);
                     }
                     if (scholarship.equals("NON-SCHOLAR")) {
                         totalAssessmentInFloat = totalFees + tuitionAmount; // calculate total assessment
-                        totalAssessment = Float.toString(totalAssessmentInFloat);
+                        totalAssessment = String.format("%.2f", totalAssessmentInFloat);
                     }
                 }
-
+                System.out.println("Tuition Amount                      |      "+tuitionAmount);
+                System.out.println();
+                
                 System.out.printf(
                         "MaxUnitsEnrolled: %-12.1f | TotalTuitionUnits: %-12.1f | TotalCreditedUnits: %-12.1f | TotalAssessment: %-20s%n",
                         maxUnitsEnrolled, totalTuitionUnits, totalCreditedUnits, totalAssessment);

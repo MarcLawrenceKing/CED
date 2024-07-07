@@ -6,9 +6,11 @@
             <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/model/Enrollment.java</file>
             <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/view/UpdateMenu.java</file>
             <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/model/TuitionFees.java</file>
-            <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/model/Tuition.java</file>
+            <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/controller/CORController.java</file>
+            <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/model/QueryConstant.java</file>
             <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/view/DeleteMenu.java</file>
             <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/CED/Main.java</file>
+            <file>file:/C:/Users/marcl/Downloads/CED/CED/src/com/app/model/Tuition.java</file>
         </group>
     </open-files>
 </project-private>

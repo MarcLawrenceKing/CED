@@ -28,7 +28,8 @@ public interface QueryConstant {
                         + "FROM Schedule sc "
                         + "JOIN Subject su ON sc.SubjectCode = su.SubjectCode "
                         + "JOIN Enrollment en ON sc.ScheduleID = en.ScheduleID "
-                        + "WHERE en.StudentID = ? AND sc.AYTerm = ?";
+                        + "WHERE en.StudentID = ? AND sc.AYTerm = ?"
+                        + "ORDER BY sc.SubjectCode";
         String RESET_TOTALS = "UPDATE Tuition "
                         + "SET TotalTuitionUnits = 0, TotalCreditedUnits = 0, TuitionAmount = 0, TotalFees = 0, TotalAssessment = 0 "
                         + "WHERE StudentID = ? AND AYTerm = ?";
