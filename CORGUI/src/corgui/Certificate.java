@@ -9,7 +9,48 @@ package corgui;
  *
  * @author Administrator
  */
-public class Certificate extends javax.swing.JFrame {
+
+import java.awt.Desktop;
+import java.awt.Graphics2D;
+
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+import java.awt.image.BufferedImage;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Certificate extends JFrame {
+    
+    
+    
+    public void PDFMaker() {
+    try {
+        
+        BufferedImage img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+        this.paint(img.getGraphics());
+
+        String path = "C:\\Users\\Administrator\\Downloads\\certificate.jpg";
+        ImageIO.write(img, "jpg", new File(path));
+
+        // Printing the file using the Desktop class
+        if (Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            if (desktop.isSupported(Desktop.Action.PRINT)) {
+                desktop.print(new File(path));
+            } else {
+                JOptionPane.showMessageDialog(null, "Printing is not supported on your system.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Desktop class is not supported on your system.");
+        }
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, ex);
+    }
+}
+    
+    
 
     /**
      * Creates new form Certificate
@@ -29,6 +70,87 @@ public class Certificate extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        StudentID = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        StudentName = new javax.swing.JTextField();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        Address = new javax.swing.JTextField();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        ProgCode = new javax.swing.JTextField();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        ContactNum = new javax.swing.JTextField();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        YearLevel = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        Section = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        ProgDesc = new javax.swing.JTextField();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        AYTerm = new javax.swing.JTextField();
+        Campus = new javax.swing.JTextField();
+        jPanel33 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jPanel39 = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jPanel36 = new javax.swing.JPanel();
+        MaxUnitsField = new javax.swing.JTextField();
+        jPanel37 = new javax.swing.JPanel();
+        jPanel44 = new javax.swing.JPanel();
+        jPanel45 = new javax.swing.JPanel();
+        jPanel46 = new javax.swing.JPanel();
+        TotalTuitionField = new javax.swing.JTextField();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        jPanel42 = new javax.swing.JPanel();
+        jTextField28 = new javax.swing.JTextField();
+        TotalAssessmentField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel38 = new javax.swing.JPanel();
+        TotalCreditedField = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        SubjectToSchedArea = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        BillArea = new javax.swing.JTextArea();
+        TuitionFeeField = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -42,15 +164,814 @@ public class Certificate extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel17.setMinimumSize(new java.awt.Dimension(1280, 700));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel35.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel35.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel20.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel20.setText("TOTAL UNITS ENROLLED:");
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel17.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 660, 190, -1));
+
+        jPanel18.setBackground(new java.awt.Color(112, 0, 0));
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("CERTIFICATE OF REGISTRATION");
+        jPanel18.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1240, -1));
+
+        jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1240, 40));
+
+        StudentID.setEditable(false);
+        StudentID.setBackground(new java.awt.Color(255, 255, 255));
+        StudentID.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        StudentID.setForeground(new java.awt.Color(153, 0, 0));
+        StudentID.setText("STUDENT ID");
+        StudentID.setBorder(null);
+        StudentID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StudentIDActionPerformed(evt);
+            }
+        });
+        jPanel17.add(StudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 570, -1));
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel11.setText("CAMPUS:");
+        jPanel17.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
+
+        StudentName.setEditable(false);
+        StudentName.setBackground(new java.awt.Color(255, 255, 255));
+        StudentName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        StudentName.setForeground(new java.awt.Color(153, 0, 0));
+        StudentName.setText("NAME");
+        StudentName.setBorder(null);
+        jPanel17.add(StudentName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 570, -1));
+
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel12.setText("ADDRESS:");
+
+        Address.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Address.setForeground(new java.awt.Color(153, 0, 0));
+        Address.setText("ADDRESS");
+        Address.setBorder(null);
+        Address.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddressActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 520, 60));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel29.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel29.setText("PROGRAM CODE:");
+
+        ProgCode.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        ProgCode.setForeground(new java.awt.Color(153, 0, 0));
+        ProgCode.setText("PROGRAM CODE");
+        ProgCode.setBorder(null);
+        ProgCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProgCodeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ProgCode, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(ProgCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        jPanel17.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 290, 60));
+
+        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel15.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel15.setText("CONTACT NUMBER:");
+
+        ContactNum.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        ContactNum.setForeground(new java.awt.Color(153, 0, 0));
+        ContactNum.setText("CONTACT NUMBER");
+        ContactNum.setBorder(null);
+        ContactNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactNumActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ContactNum, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(ContactNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 520, 60));
+
+        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel16.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel16.setText("YEAR LEVEL:");
+
+        YearLevel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        YearLevel.setForeground(new java.awt.Color(153, 0, 0));
+        YearLevel.setText("Year Level");
+        YearLevel.setBorder(null);
+        YearLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearLevelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(YearLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(YearLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 310, 60));
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel19.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel19.setText("SECTION: ");
+
+        Section.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Section.setForeground(new java.awt.Color(153, 0, 0));
+        Section.setText("SECTION");
+        Section.setBorder(null);
+        Section.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SectionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Section, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(Section, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 180, 390, 60));
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel17.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel17.setText("PROGRAM DESCRIPTION:");
+
+        ProgDesc.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        ProgDesc.setForeground(new java.awt.Color(153, 0, 0));
+        ProgDesc.setText("PROGRAM DESCRIPTION");
+        ProgDesc.setBorder(null);
+        ProgDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProgDescActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(ProgDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ProgDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel17.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 410, 60));
+
+        jPanel27.setBackground(new java.awt.Color(206, 156, 32));
+
+        jLabel22.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("SCHEDULE");
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, 260, 40));
+
+        jPanel25.setBackground(new java.awt.Color(206, 156, 32));
+        jPanel25.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel34.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel34.setText("SUBJECT CODE");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel34)
+                .addContainerGap())
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(jLabel34)
+                .addContainerGap())
+        );
+
+        jPanel17.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 110, 40));
+
+        jPanel26.setBackground(new java.awt.Color(206, 156, 32));
+
+        jLabel21.setBackground(new java.awt.Color(206, 156, 32));
+        jLabel21.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("SUBJECT TITLE");
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(1825, 1825, 1825))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel17.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 310, 40));
+
+        jPanel28.setBackground(new java.awt.Color(206, 156, 32));
+
+        jLabel23.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel23.setText("SECTION CODE");
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addGap(40, 40, 40))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 150, 40));
+
+        jPanel29.setBackground(new java.awt.Color(206, 156, 32));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("TUITION");
+        jPanel29.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, -1));
+
+        jLabel25.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("UNITS");
+        jPanel29.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 90, -1));
+
+        jPanel17.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 90, 40));
+
+        jPanel30.setBackground(new java.awt.Color(206, 156, 32));
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("CREDITED");
+        jPanel30.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 68, -1));
+
+        jLabel27.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("UNITS");
+        jPanel30.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 68, -1));
+
+        jPanel17.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 90, 40));
+
+        jLabel28.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel28.setText("A.Y - TERM:");
+        jPanel17.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 80, -1, -1));
+
+        jPanel31.setBackground(new java.awt.Color(206, 156, 32));
+
+        jLabel30.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("BREAKDOWN OF FEES");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addGap(19, 19, 19))
+        );
+
+        jPanel17.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 140, 40));
+
+        jPanel32.setBackground(new java.awt.Color(206, 156, 32));
+
+        jLabel31.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("AMOUNT");
+
+        jLabel32.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel32)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel31)
+                .addGap(20, 20, 20))
+        );
+
+        jPanel17.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 250, 90, 40));
+
+        AYTerm.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        AYTerm.setForeground(new java.awt.Color(153, 0, 0));
+        AYTerm.setText("A.Y - TERM:");
+        AYTerm.setBorder(null);
+        AYTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AYTermActionPerformed(evt);
+            }
+        });
+        jPanel17.add(AYTerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 550, -1));
+
+        Campus.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Campus.setForeground(new java.awt.Color(153, 0, 0));
+        Campus.setText("CAMPUS");
+        Campus.setBorder(null);
+        Campus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampusActionPerformed(evt);
+            }
+        });
+        jPanel17.add(Campus, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 550, -1));
+
+        jPanel33.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel33.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel34.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel34.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel35.setText("SUBJECT CODE");
+        jPanel34.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 7, -1, 30));
+
+        jPanel33.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 450, 40));
+
+        jLabel36.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel36.setText("MAX UNITS ALLOWED");
+        jPanel33.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 310, 40));
+
+        jPanel39.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel39.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel40.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel40.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel37.setText("SUBJECT CODE");
+        jPanel40.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 7, -1, 30));
+
+        jPanel39.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 450, 40));
+
+        jLabel38.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel38.setText("MAX UNITS ALLOWED");
+        jPanel39.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 310, 40));
+
+        jPanel33.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 300, 40));
+
+        jPanel17.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 300, 40));
+
+        jLabel33.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("Tuition Fee");
+        jPanel17.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 630, 118, 20));
+
+        jPanel36.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel36.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel36.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MaxUnitsField.setBackground(new java.awt.Color(206, 212, 218));
+        MaxUnitsField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        MaxUnitsField.setForeground(new java.awt.Color(153, 0, 0));
+        MaxUnitsField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        MaxUnitsField.setText("23.0");
+        MaxUnitsField.setBorder(null);
+        MaxUnitsField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaxUnitsFieldActionPerformed(evt);
+            }
+        });
+        jPanel36.add(MaxUnitsField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
+
+        jPanel17.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 100, 40));
+
+        jPanel37.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel37.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel44.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel44.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel44.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel37.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 90, 40));
+
+        jPanel45.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel45.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel45.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel46.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel46.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel46.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel45.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 90, 40));
+
+        jPanel37.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 660, 90, 40));
+
+        TotalTuitionField.setBackground(new java.awt.Color(206, 212, 218));
+        TotalTuitionField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        TotalTuitionField.setForeground(new java.awt.Color(153, 0, 0));
+        TotalTuitionField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TotalTuitionField.setText("31.0");
+        TotalTuitionField.setBorder(null);
+        TotalTuitionField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TotalTuitionFieldActionPerformed(evt);
+            }
+        });
+        jPanel37.add(TotalTuitionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, -1));
+
+        jPanel17.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 90, 40));
+
+        jPanel41.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel41.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel39.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel39.setText("TOTAL ASSESSMENT:");
+
+        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+        jPanel41.setLayout(jPanel41Layout);
+        jPanel41Layout.setHorizontalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                .addContainerGap(258, Short.MAX_VALUE)
+                .addComponent(jLabel39)
+                .addContainerGap())
+        );
+        jPanel41Layout.setVerticalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel41Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel17.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 660, 390, -1));
+
+        jPanel42.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel42.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel42.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField28.setBackground(new java.awt.Color(206, 212, 218));
+        jTextField28.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jTextField28.setForeground(new java.awt.Color(153, 0, 0));
+        jTextField28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField28.setText("23.0");
+        jTextField28.setBorder(null);
+        jTextField28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField28ActionPerformed(evt);
+            }
+        });
+        jPanel42.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 620, 70, -1));
+
+        TotalAssessmentField.setBackground(new java.awt.Color(206, 212, 218));
+        TotalAssessmentField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        TotalAssessmentField.setForeground(new java.awt.Color(153, 0, 0));
+        TotalAssessmentField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TotalAssessmentField.setText("999,999.99");
+        TotalAssessmentField.setBorder(null);
+        TotalAssessmentField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TotalAssessmentFieldActionPerformed(evt);
+            }
+        });
+        jPanel42.add(TotalAssessmentField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+
+        jPanel17.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 660, 90, 40));
+        jPanel17.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, -1, -1));
+
+        jPanel38.setBackground(new java.awt.Color(206, 212, 218));
+        jPanel38.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TotalCreditedField.setBackground(new java.awt.Color(206, 212, 218));
+        TotalCreditedField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        TotalCreditedField.setForeground(new java.awt.Color(153, 0, 0));
+        TotalCreditedField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TotalCreditedField.setText("23.0");
+        TotalCreditedField.setBorder(null);
+        TotalCreditedField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TotalCreditedFieldActionPerformed(evt);
+            }
+        });
+        jPanel38.add(TotalCreditedField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, -1));
+
+        jPanel17.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 660, 80, 40));
+
+        SubjectToSchedArea.setEditable(false);
+        SubjectToSchedArea.setColumns(20);
+        SubjectToSchedArea.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        SubjectToSchedArea.setForeground(new java.awt.Color(204, 0, 0));
+        SubjectToSchedArea.setRows(5);
+        SubjectToSchedArea.setText("COMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0\t          W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0\t          W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0                 W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0                 W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0                 W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0                 W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0                 W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\nCOMP 009\t\tObject Oriented Programming\t\t                   BSIT 2-3\t           5.0\t               3.0\t          W 09:00:00-12:00:00 LAB S 10:00:00-12:00:00 LEC\n\n");
+        SubjectToSchedArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane7.setViewportView(SubjectToSchedArea);
+
+        jPanel17.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 1020, 350));
+
+        BillArea.setColumns(20);
+        BillArea.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        BillArea.setForeground(new java.awt.Color(204, 0, 0));
+        BillArea.setRows(5);
+        BillArea.setText("CULTURAL FEE (COLLEGE \t9,999.99\n& OU UNDERGRAD)\t9,999.99\nGUIDANCE FEE\t\t9,999.99\nINSURANCE\t\t9,999.99\nLABORATORY FEE \t9,999.99\n(COLLEGE & OU \t9,999.99\nUNDERGRAD)\t\t9,999.99\nLIBRARY FEE (COLLEGE & \t9,999.99\nOU UNDERGRAD)\t9,999.99\nMEDICAL AND DENTAL FEE \t9,999.99\n(COLLEGE & OU \t9,999.99\nUNDERGRAD)\t\t9,999.99\nPUBLICATION FEE \t9,999.99\n\n\n\n\n\n\n");
+        BillArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane1.setViewportView(BillArea);
+
+        jPanel17.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 300, 220, 330));
+
+        TuitionFeeField.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        TuitionFeeField.setForeground(new java.awt.Color(153, 0, 0));
+        TuitionFeeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TuitionFeeField.setText("999,999.99");
+        TuitionFeeField.setBorder(null);
+        TuitionFeeField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TuitionFeeFieldActionPerformed(evt);
+            }
+        });
+        jPanel17.add(TuitionFeeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 630, 80, 20));
+
+        jPanel12.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        jLabel13.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel13.setText("A.Y - TERM:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel14.setText("A.Y - TERM:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         setSize(new java.awt.Dimension(1296, 759));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TuitionFeeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TuitionFeeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TuitionFeeFieldActionPerformed
+
+    private void TotalCreditedFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCreditedFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TotalCreditedFieldActionPerformed
+
+    private void TotalAssessmentFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalAssessmentFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TotalAssessmentFieldActionPerformed
+
+    private void jTextField28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField28ActionPerformed
+
+    private void TotalTuitionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalTuitionFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TotalTuitionFieldActionPerformed
+
+    private void MaxUnitsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaxUnitsFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MaxUnitsFieldActionPerformed
+
+    private void CampusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampusActionPerformed
+
+    private void AYTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AYTermActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AYTermActionPerformed
+
+    private void ProgDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgDescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProgDescActionPerformed
+
+    private void SectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SectionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SectionActionPerformed
+
+    private void YearLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearLevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YearLevelActionPerformed
+
+    private void ContactNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContactNumActionPerformed
+
+    private void ProgCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProgCodeActionPerformed
+
+    private void AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddressActionPerformed
+
+    private void StudentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StudentIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,7 +1009,88 @@ public class Certificate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AYTerm;
+    private javax.swing.JTextField Address;
+    private javax.swing.JTextArea BillArea;
+    private javax.swing.JTextField Campus;
+    private javax.swing.JTextField ContactNum;
+    private javax.swing.JTextField MaxUnitsField;
+    private javax.swing.JTextField ProgCode;
+    private javax.swing.JTextField ProgDesc;
+    private javax.swing.JTextField Section;
+    private javax.swing.JTextField StudentID;
+    private javax.swing.JTextField StudentName;
+    private javax.swing.JTextArea SubjectToSchedArea;
+    private javax.swing.JTextField TotalAssessmentField;
+    private javax.swing.JTextField TotalCreditedField;
+    private javax.swing.JTextField TotalTuitionField;
+    private javax.swing.JTextField TuitionFeeField;
+    private javax.swing.JTextField YearLevel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTextField jTextField28;
     // End of variables declaration//GEN-END:variables
 }

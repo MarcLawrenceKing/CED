@@ -32,9 +32,9 @@ public class GenerateCOR extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        Delete = new javax.swing.JButton();
+        Generate = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        deletecbb = new javax.swing.JComboBox<>();
+        generatecbb = new javax.swing.JComboBox<>();
         warning1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -45,7 +45,7 @@ public class GenerateCOR extends javax.swing.JFrame {
         enrollmentcbb3 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        gobackdeletemenu = new javax.swing.JButton();
+        gobackmenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,25 +66,25 @@ public class GenerateCOR extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Delete.setBackground(new java.awt.Color(21, 83, 135));
-        Delete.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        Delete.setForeground(new java.awt.Color(255, 255, 255));
-        Delete.setText("Generate");
-        Delete.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        Delete.addActionListener(new java.awt.event.ActionListener() {
+        Generate.setBackground(new java.awt.Color(21, 83, 135));
+        Generate.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+        Generate.setForeground(new java.awt.Color(255, 255, 255));
+        Generate.setText("Generate");
+        Generate.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Generate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
+                GenerateActionPerformed(evt);
             }
         });
-        jPanel2.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 950, 80));
+        jPanel2.add(Generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 950, 80));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 48)); // NOI18N
         jLabel3.setText("ENTER STUDENT ID:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
-        deletecbb.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        deletecbb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(deletecbb, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 450, 50));
+        generatecbb.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        generatecbb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(generatecbb, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 450, 50));
 
         warning1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         warning1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -130,17 +130,17 @@ public class GenerateCOR extends javax.swing.JFrame {
 
         jPanel6.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1280, 570));
 
-        gobackdeletemenu.setFont(new java.awt.Font("OldSansBlack", 0, 24)); // NOI18N
-        gobackdeletemenu.setForeground(new java.awt.Color(255, 255, 255));
-        gobackdeletemenu.setText("Go back to Menu");
-        gobackdeletemenu.setBorderPainted(false);
-        gobackdeletemenu.setContentAreaFilled(false);
-        gobackdeletemenu.addActionListener(new java.awt.event.ActionListener() {
+        gobackmenu.setFont(new java.awt.Font("OldSansBlack", 0, 24)); // NOI18N
+        gobackmenu.setForeground(new java.awt.Color(255, 255, 255));
+        gobackmenu.setText("Go back to Menu");
+        gobackmenu.setBorderPainted(false);
+        gobackmenu.setContentAreaFilled(false);
+        gobackmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gobackdeletemenuActionPerformed(evt);
+                gobackmenuActionPerformed(evt);
             }
         });
-        jPanel6.add(gobackdeletemenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 50));
+        jPanel6.add(gobackmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 30, 50));
@@ -151,34 +151,37 @@ public class GenerateCOR extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+    private void GenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateActionPerformed
         GenerateCOR generate = new GenerateCOR();
         MenuOptions menu = new MenuOptions();
+        Certificate cert = new Certificate();
         
         int res = JOptionPane.showConfirmDialog(this, "Generate Certificate of Registration?", "Confirm", JOptionPane.YES_NO_OPTION);
         if (res == JOptionPane.YES_OPTION){
+            dispose();
+            cert.show();
+            cert.PDFMaker();
             JOptionPane.showMessageDialog(null, "COR Generated successfully!");
             int result = JOptionPane.showConfirmDialog(this, "Do you want to generate another Certficate of Registration?", "Confirmation", JOptionPane.YES_NO_OPTION);
             if (result == JOptionPane.YES_OPTION) {
                 dispose();
                 generate.show();
             } else if (result == JOptionPane.NO_OPTION) {
-                JOptionPane.showMessageDialog(null, "You will now return to the delete menu");
-                menu.show();
+                generate.show();
 
             }
         } else if (res == JOptionPane.NO_OPTION){
             generate.show();
         }
         dispose();
-    }//GEN-LAST:event_DeleteActionPerformed
+    }//GEN-LAST:event_GenerateActionPerformed
 
-    private void gobackdeletemenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gobackdeletemenuActionPerformed
+    private void gobackmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gobackmenuActionPerformed
         MenuOptions menu = new MenuOptions();
         menu.show(); //display frame called
 
         dispose();
-    }//GEN-LAST:event_gobackdeletemenuActionPerformed
+    }//GEN-LAST:event_gobackmenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,12 +219,12 @@ public class GenerateCOR extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Delete;
-    private javax.swing.JComboBox<String> deletecbb;
+    private javax.swing.JButton Generate;
     private javax.swing.JButton enrollmentCreate;
     private javax.swing.JComboBox<String> enrollmentcbb1;
     private javax.swing.JComboBox<String> enrollmentcbb3;
-    private javax.swing.JButton gobackdeletemenu;
+    private javax.swing.JComboBox<String> generatecbb;
+    private javax.swing.JButton gobackmenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
